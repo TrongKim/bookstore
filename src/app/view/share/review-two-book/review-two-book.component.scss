@@ -2,11 +2,11 @@
 @import 'mixins';
 
 section.author-book {
-    height: 82.7rem;
+    padding-top: 14.5rem;
+    padding-bottom: 14.9rem;
 
     display: grid;
     place-content: center;
-
     
     &.white {
         background-color: $white;
@@ -17,8 +17,6 @@ section.author-book {
     }
 
     & > .author-book-content {
-        height: 53.3rem;
-
         & > .title {
             height: 7.6rem;
 
@@ -209,6 +207,22 @@ section.author-book {
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1380px) {
+    section.author-book > .author-book-content > .books {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    section.author-book > .author-book-content > .books {
+        & > .container-left > .about-first-book > .some-information-about-book > .container-about-book {
+            
         }
     }
 }
