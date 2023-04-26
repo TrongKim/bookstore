@@ -236,6 +236,18 @@ section.author-book {
     }
 }
 
+@media only screen and (max-width: 630px) {
+    section.author-book > .author-book-content > .books {
+        & > .container-right  > .about-another-book {
+            width: auto;
+        }
+
+        & > .container-left > .about-first-book {
+            width: auto;
+        }
+    }
+}
+
 
 @media only screen and (max-width: 460px) {
     

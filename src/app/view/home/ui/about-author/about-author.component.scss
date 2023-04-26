@@ -4,7 +4,7 @@
 section.about-author {
     width: 100%;
 
-    height: 99rem;
+    padding: 15rem 0;
 
     background-color: $background-opacity-blue;
 
@@ -13,6 +13,23 @@ section.about-author {
 
     & > .about-author-container {
         display: flex;
+
+        & > .container-left {
+            & > .image-container {
+                width: 59rem;
+                height: 69rem;
+            
+                overflow: hidden;
+            
+                & > img {
+                    object-position: -25px;
+            
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
         & > .container-right {
             flex: 1;
             & > .container-about-author {
@@ -113,6 +130,56 @@ section.about-author {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.about-author > .about-author-container {
+        flex-direction: column;
+
+        & > .container-right > .container-about-author {
+            & > .desc {
+                text-align: center;
+            }
+
+            & > .qr-code {
+                margin: 0 auto;
+                margin-top: 4.1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    section.about-author > .about-author-container {
+        & > .container-left > .image-container {
+            width: 100%;
+
+            height: auto;
+
+            overflow: hidden;
+            
+            margin: 0 auto;
+
+            & > img {
+                object-position: unset;
+            }
+        }
+
+        & > .container-right > .container-about-author {
+            & > .qr-code {
+                flex-direction: column;
+                align-items: center;
+
+                height: auto;
+
+                width: auto;
+            }
+
+            & > .parameter {
+                display: none;
             }
         }
     }
