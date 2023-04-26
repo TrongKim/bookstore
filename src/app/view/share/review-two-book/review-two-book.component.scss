@@ -55,8 +55,6 @@ section.author-book {
                             margin-left: auto;
 
                             & > .title-book {
-                                height: 3.8rem;
-
                                 @include font-cardo(32px);
                                 color: $primary_blue_color;
                             }
@@ -220,9 +218,34 @@ section.author-book {
 }
 
 @media only screen and (max-width: 688px) {
-    section.author-book > .author-book-content > .books {
-        & > .container-left > .about-first-book > .some-information-about-book > .container-about-book {
-            
+    
+    section.author-book > .author-book-content {
+        & > .books {
+            & > .container-left > .about-first-book {
+                flex-direction: column;
+                align-items: center;
+                row-gap: 2rem;
+            }
+    
+            & > .container-right > .about-another-book {
+                flex-direction: column;
+                align-items: center;
+                row-gap: 2rem;
+            }
         }
+    }
+}
+
+
+@media only screen and (max-width: 460px) {
+    
+    section.author-book > .author-book-content {
+
+        & > .title {
+            width: 100vw;
+
+            text-align: center;
+        }
+        
     }
 }

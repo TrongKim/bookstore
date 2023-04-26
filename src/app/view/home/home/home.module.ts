@@ -9,6 +9,7 @@ import { IconQrModule } from 'src/app/icon/icon-qr/icon-qr.module';
 import { TrademarkModule } from '../../share/trademark/trademark.module';
 import { ReviewTwoBookModule } from '../../share/review-two-book/review-two-book.module';
 import { ReviewNewBookComponent } from "../ui/review-new-book/review-new-book.component";
+import { AboutAuthorComponent } from "../ui/about-author/about-author.component";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReviewNewBookComponent } from "../ui/review-new-book/review-new-book.co
     ],
     declarations: [
         HomeComponent,
-        ReviewNewBookComponent
+        ReviewNewBookComponent,
+        AboutAuthorComponent
     ],
     exports: [
         HomeComponent
