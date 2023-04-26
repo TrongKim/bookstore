@@ -1,0 +1,15 @@
+<div class="error-page">
+    <app-header [titlePage]="'Page Error'"
+        [descriptionPage]="'There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.'"></app-header>
+    <section [style.backgroundImage]="'url(assets/img/404/background-error.png)'" class="error">
+        <div class="error-container">
+            <div class="error-image">
+                <img src="assets/img/404/404.png" alt="error image">
+            </div>
+            <h3 class="title-error">Page not Found!!!</h3>
+            <p class="description">The page you are looking for doesn't exist. Please try searching for some other page, or return to the website's homepage to find what you're looking for.</p>
+            <button [routerLink]="['/home']" class="back-to-home-btn">Back to Home</button>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>

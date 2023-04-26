@@ -1,0 +1,10 @@
+.image {
+    width: 30rem;
+    height: 40rem;
+
+    overflow: hidden;
+
+    & > img {
+        object-position: -26px -4.5px;
+    }
+}

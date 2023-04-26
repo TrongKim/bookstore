@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'mixins';
+
+section.error {
+    height: 112.4rem;
+
+    display: grid;
+    place-content: center;
+
+    & > .error-container {
+        width: 58.9rem;
+
+        & > .error-image {
+            margin: 0 auto;
+
+            width: fit-content;
+        }
+
+        & > h3.title-error {
+            margin: 0 auto;
+            margin-top: 3.5rem;
+
+            @include font-cardo(4rem);
+            letter-spacing: -0.02em;
+            line-height: 130%;
+            font-weight: 700;
+            text-align: center;
+
+        }
+
+        & > p.description {
+            @include description(1.9rem, $gray);
+            text-align: center;
+
+            margin: 0 auto;
+            margin-top: 1.6rem;
+        }
+
+        & > button.back-to-home-btn {
+            margin: 0 auto;
+            margin-top: 4.1rem;
+
+            @include button(1.9rem, $light_yellow, $primary_blue_color);
+
+            width: 22rem;
+            height: 6.5rem;
+
+            display: grid;
+            place-content: center;
+        }
+    }
+}

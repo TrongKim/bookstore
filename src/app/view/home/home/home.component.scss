@@ -1,0 +1,871 @@
+@import 'variables';
+@import 'mixins';
+
+section.review-new-book {
+
+    background-color: $primary_blue_color;
+
+    height: 110rem;
+
+    & > .container {
+        padding-top: 1.5rem;
+        & > .top-navbar {
+            display: flex;
+            justify-content: space-between;
+
+            height: 5rem;
+
+            & > .container-left {
+                display: flex;
+                column-gap: 3.3rem;
+
+                & > .logo {
+                    display: flex;
+                    column-gap: 8.75px;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                & > .icons-contact {
+                    display: flex;
+                    column-gap: 1rem;
+
+                    & > div {
+                        width: 4.5rem;
+                        height: 4.5rem;
+
+                        background-color: $white;
+
+                        display: grid;
+                        place-content: center;
+                    }
+                }
+            }
+
+            & > .container-right {
+                display: flex;
+
+                height: 100%;
+
+                width: fit-content;
+
+                & > .menu {
+                    display: flex;
+                    align-items: center;
+                    & > li {
+                        height: 100%;
+
+                        padding: 0 2.6rem;
+
+                        display: grid;
+                        place-content: center;
+                        
+                        color: $white;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 17px;
+                        line-height: 125%;
+
+                        cursor: pointer;
+                    }
+
+                    & > li.cart {
+                        padding: unset;
+
+                        padding-right: 3rem;
+                    }
+
+                    & > li.button-order {
+                        @include button-yellow(19px);
+
+                        width: 18rem;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        & > .about-book {
+            display: flex;
+
+            margin-top: 9.5rem;
+
+            & > .container-left {
+                flex: 2;
+
+                & > .welcome {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1.5rem;
+
+                    height: 3.7rem;
+
+                    & > .line {
+                        border: 1px solid $light_yellow;
+
+                        width: 34px;
+                        height: 0;
+                    }
+
+                    & > p {
+                        font-family: 'Cardo';
+                        font-style: italic;
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 154.5%;
+
+                        color: $white;
+                    }
+                }
+
+                & > .title-and-description {
+                    max-width: 61.4rem;
+
+                    margin-top: 1.6rem;
+
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 3.2rem;
+                    & > h2 {
+                        color: $white;
+                        font-family: 'Cardo';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 65px;
+                        line-height: 110%;
+                    }
+
+                    & > span {
+                        color: $primary_blue_color_opacity_low;
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 19px;
+                        line-height: 180%;
+                    }
+                }
+
+                & > .buttons-order-read-detail {
+                    display: flex;
+                    height: 6.5rem;
+
+                    margin-top: 4.9rem;
+
+                    & > button, & > div {
+                        width: 22rem;
+                    }
+
+                    & > .order-btn {
+                        @include button-yellow(19px);
+                    }
+
+                    & > .read-detail-btn {
+                        display: grid;
+                        place-content: center;
+                        
+                        color: $white;
+
+                        & > p {
+                            height: 2.7rem;
+                            width: fit-content;
+
+                            @include font-cardo(19px);
+
+                            border-bottom: 1px solid $white;
+                        }
+                    }
+                }
+
+                & > .parameter {
+                    margin-top: 4.9rem;
+
+                    display: flex;
+                    justify-content: space-between;
+
+                    width: 100%;
+
+                    max-width: 58rem;
+
+                    height: 6.3rem;
+
+                    & > .parameter-child {
+                        display: flex;
+                        column-gap: 1.3rem;
+                        & > .circle {
+                            @include circle(16px);
+                            background-color: $light_yellow;
+
+                            margin-top: 0.7rem;
+                        }
+
+                        & > .title-and-info {
+                            & > h4 {
+                                @include font-cardo(24px);
+                                color: $white;
+                            }
+
+                            & > span {
+                                margin-top: 3px;
+
+                                @include font-inter(18px);
+                                color: $primary_blue_color_opacity_low;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            & > .container-right {
+                width: fit-content;
+            }
+        }
+    }
+}
+
+section.about-author {
+    width: 100%;
+
+    height: 99rem;
+
+    background-color: $background-opacity-blue;
+
+    display: grid;
+    place-content: center;
+
+    & > .about-author-container {
+        display: flex;
+        & > .container-right {
+            flex: 1;
+            & > .container-about-author {
+                max-width: 567.78px;
+                width: 100%;
+
+                margin-left: auto;
+
+                & > .desc {
+                    margin-top: 2.2rem;
+                    margin-bottom: 4.4rem;
+
+                    @include font-inter(19px);
+                    color: $gray;
+                    line-height: 180%;
+                }
+
+                & > .parameter {
+                    display: flex;
+
+                    height: 9.7rem;
+
+                    & > div {
+                        & > h3 {
+                            @include font-cardo(5.5rem);
+                            color: $primary_blue_color;
+
+                            height: 6.6rem;
+
+                            display: grid;
+                            place-content: center;
+
+                            width: fit-content;
+                        }
+
+                        & > p {
+                            height: 3.1rem;
+
+                            display: grid;
+                            place-content: center;
+
+                            @include font-inter(1.8rem);
+                            line-height: 170%;
+                            color: $gray;
+
+                            width: fit-content;
+                        }
+                    }
+
+                    & > .books-published {
+                        width: 17.1rem;
+
+                        border-right: 2px solid $light_yellow;
+                    }
+
+                    & > .user-reviews {
+                        width: 18.2rem;
+
+                        border-right: 2px solid $light_yellow;
+
+                        display: grid;
+                        place-content: center;
+                    }
+
+                    & > .best-seller-awards {
+                        width: 214.78px;
+
+                        padding-left: 3.2rem;
+                    }
+                }
+
+                & > .qr-code {
+                    margin-top: 4.1rem;
+
+                    width: 47.7rem;
+                    height: 16rem;
+
+                    padding: 1.5rem 1.8rem;
+
+                    background-color: $primary_blue_color;
+
+                    display: flex;
+                    column-gap: 3.7rem;
+
+                    & > .container-right {
+
+                        margin: 14.5px 0;
+
+                        & > h3 {
+                            @include font-cardo(2.2rem);
+                            color: $light_yellow;
+                        }
+
+                        & > p {
+                            @include font-inter(1.9rem);
+                            line-height: 180%;
+                            color: $primary_blue_color_opacity_low;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.order-now {
+    height: 50rem;
+
+    background-color: $primary_blue_color;
+
+    display: grid;
+    place-content: center;
+
+    & > .order-now-container {
+        width: 133.4rem;
+
+        height: 42.7rem;
+
+        display: flex;
+
+        & > .container-left {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            & > .content-container {
+                max-width: 56.7rem;
+                width: 100%;
+
+                & > .title {
+                    margin: unset;
+
+                    & > h3 {
+                        width: fit-content;
+
+                        margin: unset;
+
+                        color: $white;
+                    }
+
+                    & > .line {
+                        margin: unset;
+                        margin-top: 2.2rem;
+                    }
+                }
+
+                & > p {
+                    margin-top: 2.2rem;
+
+                    @include font-inter(19px);
+                    color: $primary_blue_color_opacity_low;
+                    line-height: 180%;
+                }
+
+                & > .order-btn {
+                    @include button(1.9rem, transparent, $white);
+
+                    width: 22rem;
+                    height: 6.5rem;
+
+                    display: grid;
+                    place-content: center;
+
+                    border: 1px solid $light_yellow;
+
+                    margin-top: 3.1rem;
+                }
+            }
+        }
+    }
+}
+
+section.what-learn {
+    height: 110.8rem;
+
+    display: grid;
+    place-content: center;
+
+    & > .what-learn-container {
+        width: 130rem;
+
+        height: 81.9rem;
+
+        & > .information-about-learner {
+            display: flex;
+
+            margin-top: 5.3rem;
+
+            & > .container-left {
+                flex: 1;
+
+                display: flex;
+                align-items: center;
+
+                & > ul.list-item-can-learn {
+                    width: 100%;
+                    max-width: 61.1rem;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 3rem;
+                    row-gap: 3.2rem;
+
+                    & > li {
+                        width: 29rem;
+
+                        padding: 4.1rem 3.3rem;
+
+                        background-color: $background-opacity-blue;
+
+                        & > .icon {
+                            @include circle(5rem);
+                            
+                            background-color: $light_yellow;
+
+                            display: grid;
+                            place-content: center;
+
+                            @include font-cardo(2.4rem);
+                            color: $primary_blue_color;
+                        }
+
+                        & > p.description {
+                            @include font-cardo(2.4rem);
+                            line-height: 140%;
+                            color: $primary_blue_color;
+                            
+                            margin-top: 3.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.chapter-includes {
+    height: 120rem;
+
+    background-color: $background-opacity-blue;
+
+    display: grid;
+    place-content: center;
+
+    & > .chapter-includes-container {
+        width: 130rem;
+
+        & > ul.chapter-list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 4rem;
+            row-gap: 4rem;
+
+            margin-top: 5rem;
+
+            & > li {
+                background-color: $white;
+
+                padding: 4.8rem 5.4rem;
+
+                max-width: 63rem;
+
+                & > h4.title-chapter {
+                    @include font-cardo(2.4rem);
+
+                    color: $primary_blue_color;
+
+                    width: fit-content;
+
+                    height: 2.9rem;
+                }
+
+                & > p.description-chapter {
+                    margin-top: 1.4rem;
+
+                    @include font-inter(1.9rem);
+                    color: $gray;
+                    line-height: 180%;
+                }
+
+                & > .parameter-chapter {
+                    margin-top: 2.5rem;
+
+                    display: flex;
+                    column-gap: 1.6rem;
+
+                    & > div {
+                        display: flex;
+                        align-items: center;
+
+                        & > .circle {
+                            @include circle(1.6rem);
+
+                            background-color: $light_yellow;
+
+                            margin-right: 1.3rem;
+                        }
+
+                        & > h5 {
+                            @include font-cardo(2.2rem);
+                            color: $primary_blue_color;
+                        }
+
+                        & > p {
+                            @include font-inter(1.8rem);
+                            line-height: 170%;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > button.free-trail-btn {
+            @include button(19px, $light_yellow, $primary_blue_color);
+            
+            width: 43.4rem;
+            height: 6.8rem;
+
+            display: grid;
+            place-content: center;
+
+            border: none;
+            outline: none;
+
+            margin: 0 auto;
+            margin-top: 7.9rem;
+        }
+
+        & > .question {
+            margin: 0 auto;
+
+            width: fit-content;
+
+            margin-top: 3.2rem;
+
+            & > p {
+                max-width: 27rem;
+
+                @include font-inter(1.8rem);
+                color: $gray;
+                line-height: 170%;
+    
+                & > span {
+                    color: $primary_blue_color;
+    
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+section.what-reader-say {
+    height: 92.7rem;
+
+    background-color: $white;
+
+    display: grid;
+    place-content: center;
+
+    & > .what-reader-say-container {
+        display: flex;
+
+        & > .container-left {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            & > .container-child {
+                width: 41.8rem;
+
+                & > .title {
+                    max-width: 32.6rem;
+
+                    margin: unset;
+
+                    & > h3 {
+                        margin-bottom: 2.7rem;
+
+                        height: unset;
+                    }
+
+                    & > .line {
+                        width: 49.26px;
+
+                        margin: unset;
+                    }
+                }
+
+                & > p.description {
+                    @include font-inter(1.9rem);
+                    line-height: 180%;
+                    color: $gray;
+
+                    margin-top: 2.9rem;
+                }
+
+                & > .ratings {
+                    margin-top: 4.6rem;
+
+                    & > ul {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 0.5rem;
+
+                        & > li.circle {
+                            @include circle(2rem);
+                            
+                            background-color: $light_yellow;
+                        }
+
+                        & > li.half-circle {
+                            @include circle(2rem);
+                            
+                            overflow: hidden;
+
+                            border: 1px solid $light_yellow;
+
+                            & > .background-yellow {
+                                width: 50%;
+                                height: 100%;
+
+                                background-color: $light_yellow;
+                            }
+                        }
+
+                        & > li.averate {
+                            @include font-cardo(2.2rem);
+                            font-weight: 700;
+                            color: $primary_blue_color;
+                        }
+                    }
+
+                    & > p {
+                        @include font-inter(1.9rem);
+                        line-height: 180%;
+                        color: $primary_blue_color;
+
+                        margin-top: 0.6rem;
+                    }
+                }
+            }
+        }
+
+        & > .container-right {
+            width: 77rem;
+
+            display: flex;
+            column-gap: 3rem;
+
+            & > div > .card {
+                padding: 3.6rem 3.1rem;
+
+                background-color: $primary_blue_color;
+
+                max-width: 37rem;
+                
+                & > .name-and-avatar {
+                    display: flex;
+                    column-gap: 2rem;
+
+                    & > .name-and-ratings {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        
+                        & > p {
+                            @include font-cardo(2.4rem);
+                            font-weight: 700;
+                            color: $white;
+
+                            margin-bottom: 0.8rem;
+                        }
+
+                        & > .ratings {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 0.5rem;
+    
+                            & > li.circle {
+                                @include circle(12.67px);
+                                
+                                background-color: $light_yellow;
+                            }
+    
+                            & > li.half-circle {
+                                @include circle(12.67px);
+                                
+                                overflow: hidden;
+    
+                                border: 1px solid $light_yellow;
+    
+                                & > .background-yellow {
+                                    width: 50%;
+                                    height: 100%;
+    
+                                    background-color: $light_yellow;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                & > p.special-description {
+                    @include font-cardo(2.2rem);
+                    color: $white;
+                    font-weight: 700;
+
+                    margin-top: 2.2rem;
+                }
+
+                & > p.normal-description {
+                    margin-top: 1.2rem;
+
+                    @include font-inter(1.9rem);
+                    line-height: 180%;
+                    color: $primary_blue_color_opacity_low;
+                }
+            }
+
+            & > .cards-left {
+                display: flex;
+                flex-direction: column;
+                row-gap: 3.1rem;
+            }
+
+            & > .card-right {
+                margin-top: 21rem;
+            }
+        }
+    }
+}
+
+section.articles-and-resources {
+    height: 101.6rem;
+
+    background-color: $background-opacity-blue;
+
+    display: grid;
+    place-content: center;
+
+    & > .articles-and-resources-container {
+        width: 130rem;
+
+        & > ul.list-card {
+            margin-top: 5rem;
+
+            display: flex;
+            column-gap: 3.5rem;
+
+            & > li.card {
+                height: 60rem;
+                
+                width: 41rem;
+
+                & > .image-card-container {
+                    width: 100%;
+
+                    height: 32.6rem;
+
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                & > .content-about-card {
+                    padding: 2.7rem 3.15rem;
+
+                    & > h4.title-card {
+                        width: fit-content;
+
+                        @include font-cardo(2.4rem);
+                        color: $primary_blue_color;
+                        font-weight: 700;
+                        letter-spacing: -0.02em;
+                    
+                    }
+
+                    & > p.description {
+                        @include font-inter(1.9rem);
+                        line-height: 180%;
+                        color: $gray;
+
+                        margin-top: 1.4rem;
+                    }
+
+                    & > .end-card-footer {
+                        margin-top: 2.7rem;
+
+                        display: flex;
+
+                        & > .container-left {
+                            width: fit-content;
+
+                            & > p {
+                                @include font-cardo(1.8rem);
+                                line-height: 125%;
+                                font-weight: 700;
+                                color: $primary_blue_color;
+                            }
+
+                            & > .line {
+                                width: 100%;
+
+                                height: 0;
+
+                                border: 1px solid $primary_blue_color;
+                            }
+                        }
+
+                        & > .container-right {
+                            flex: 1;
+
+                            display: flex;
+                            justify-content: flex-end;
+                            & > p.author-and-create-at {
+                                @include font-inter(1.7rem);
+                                line-height: 125%;
+                                letter-spacing: unset;
+                                color: $primary_blue_color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

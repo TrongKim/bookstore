@@ -1,0 +1,202 @@
+@import 'variables';
+@import 'mixins';
+
+section.about-owner {
+    height: 143.2rem;
+
+    display: grid;
+    place-content: center;
+
+    background-color: $background-opacity-blue;
+
+    & > .about-owner-container {
+        width: 130rem;
+
+        & > .image-owner {
+            height: 70rem;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & > .information-about-owner {
+            margin-top: 8rem;
+
+            display: flex;
+            column-gap: 10.8rem;
+
+            & > .container-left {
+                width: 51.9rem;
+
+                padding: 4.5rem 6.6rem;
+
+                background-color: $white;
+
+                & > ul.about-country {
+                    & > li {
+                        display: flex;
+
+                        & > p.title-info {
+                            width: 21.9rem;
+
+                            @include font-cardo(2.4rem);
+                            line-height: 5.2rem;
+                            font-weight: 700;
+                            color: $primary_blue_color;
+                        }
+
+                        & > p.info {
+                            @include font-inter(1.9rem);
+                            line-height: 280%;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+
+            & > .container-right {
+                flex: 1;
+
+                & > .title {
+                    margin: unset;
+
+                    & > h3 {
+                        width: fit-content;
+
+                        margin: unset;
+                    }
+
+                    & > .line {
+                        margin: unset;
+                        margin-top: 2.2rem;
+                    }
+                }
+
+                & > p.description {
+                    margin-top: 2.7rem;
+
+                    @include description(1.9rem, $gray);
+                }
+
+                & > button.contact-btn {
+                    @include button-yellow(1.9rem);
+
+                    width: 24rem;
+                    height: 6.5rem;
+
+                    margin-top: 3.4rem;
+                }
+            }
+        }
+    }
+}
+
+section.story {
+    height: 95.2rem;
+
+    display: grid;
+    place-content: center;
+
+    & > .story-container {
+        display: flex;
+        justify-content: space-between;
+
+        & > .container-left {
+            & > .content-container {
+                width: 59.9rem;
+
+                &  > .title {
+                    margin: unset;
+
+                    & > .line {
+                        margin: unset;
+                        margin-top: 2.2rem;
+                    }
+                }
+
+                & > p.description {
+                    margin-top: 3.4rem;
+
+                    @include description(1.9rem, $gray);
+                }
+
+                & > ul.awards {
+                    margin-top: 2.2rem;
+                    margin-left: 4.5rem;
+
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 3.5rem;
+
+                    & > li {
+                        display: flex;
+                        column-gap: 4.8rem;
+                        align-items: center;
+
+                        & > .container-left {
+                            width: 6.5rem;
+                            min-width: 6.5rem;
+                            height: 6.5rem;
+    
+                            background-color: $light_yellow;
+    
+                            display: grid;
+                            place-content: center;
+                            & > p {
+                                @include font-cardo(3rem);
+                                font-weight: 700;
+                                line-height: 52px;
+                                color: $primary_blue_color;
+                            }
+                        }
+
+                        & > .container-right {
+                            & > h4.title-award {
+                                @include font-cardo(2.4rem);
+                                line-height: 5.2rem;
+                                font-weight: 700;
+                                color: $primary_blue_color;
+
+                                margin-bottom: 0.1rem;
+                            }
+
+                            & > p {
+                                @include description(1.9rem, $gray);
+                            }
+                        }
+                    }
+
+                    & > li.line > .container-left {
+                        position: relative;
+                    }
+
+                    & > li.line > .container-left:before {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        height: 8.9rem;
+                        width: 0;
+
+                        border: 1px dashed black;
+                    }
+                }
+            }
+        }
+
+        & > .container-right {
+            height: 65rem;
+
+            width: 60rem;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

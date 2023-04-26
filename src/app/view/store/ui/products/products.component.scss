@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'mixins';
+
+section.list-product {
+    padding-top: 15rem;
+
+    & > .list-product-container {
+        & > ul.products {
+            display: flex;
+            column-gap: 4.8rem;
+            row-gap: 7rem;
+            flex-wrap: wrap;
+
+            & > li.product {
+                width: 40.1rem;
+                height: 77.4rem;
+
+                & > .image-product {
+                    width: 100%;
+
+                    display: grid;
+                    place-content: center;
+
+                    background-color: $background-opacity-blue;
+
+                    & > img {
+                        width: 29.2rem;
+                        height: 39.6rem;
+                    }
+                }
+
+                & > .name-and-price {
+                    display: flex;
+                    align-items: center;
+
+                    margin-top: 2rem;
+
+                    & > h4.name {
+                        flex: 1;
+
+                        @include font-cardo(3.2rem);
+                        font-weight: 700;
+                        color: $primary_blue_color;
+                        text-align: start;
+                    }
+
+                    & > p.price {
+                        @include font-inter(2.2rem);
+                        line-height: 180%;
+                        font-weight: 700;
+                        color: $light_yellow;
+                    }
+                    
+                }
+
+                & > p.description {
+                    @include description(1.9rem, $gray);
+
+                    margin-top: 0.9rem;
+                }
+
+                & > .tag-book {
+                    display: flex;
+                    column-gap: 1.3rem;
+
+                    margin-top: 2.4rem;
+
+                    width: fit-content;
+
+                    & > .circle {
+                        @include circle(1.6rem);
+
+                        background-color: $light_yellow;
+                    }
+
+                    & > h4 {
+                        @include font-cardo(2.4rem);
+                        font-weight: 700;
+                        color: $primary_blue_color;
+                    }
+                }
+
+                & > button.order-btn {
+                    @include button(1.9rem, $white, $primary_blue_color);
+
+                    border: 1px solid $light_yellow;
+
+                    width: 22rem;
+
+                    height: 6.5rem;
+
+                    margin-top: 2.5rem;
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,271 @@
+@import 'variables';
+@import 'mixins';
+
+section.keep-in-touch {
+    padding-top: 11.1rem;
+
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 13rem;
+
+    & > .keep-in-touch-container {
+        width: 129.9rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        & > .container-left {
+            width: 52.3rem;
+
+            & > .title {
+                margin: unset;
+
+                & > h3 {
+                    margin: unset;
+
+                    width: fit-content;
+                }
+
+                & > .line {
+                    margin: unset;
+                    margin-top: 2.2rem;
+                }
+            }
+
+            & > p.description {
+                margin-top: 2.7rem;
+
+                @include description(1.9rem, $gray);
+            }
+
+            & > ul.list-contact {
+                margin-top: 4rem;
+
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.8rem;
+
+                & > li.contact {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 2.7rem;
+
+                    & > .icon {
+                        width: 6.5rem;
+                        height: 6.5rem;
+
+                        background-color: $primary_blue_color;
+
+                        display: grid;
+                        place-content: center;
+                    }
+
+                    & > .title-and-description-contact {
+                        & > h4 {
+                            @include font-cardo(2.4rem);
+                            font-weight: 700;
+                            line-height: 1;
+                            color: $primary_blue_color;
+                        }
+
+                        & > p.description {
+                            @include description(1.9rem, $gray);
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .container-right {
+            margin-right: 6.4rem;
+
+            & > form.contact-form {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.5rem;
+
+                max-width: 66.2rem;
+
+                & div.input {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1.4rem;
+
+                    border: 1px solid $border-blue-opacity;
+                
+                    padding: 1.5rem 2.1rem;
+                }
+
+                & div.input > input, .message-zone {
+                    @include font-inter(1.9rem);
+                    color: $primary_blue_color;
+                    line-height: 180%;
+
+                    outline: unset;
+                    border: unset;
+
+                    height: 3.4rem;
+                    
+                    &::placeholder {
+                        @include font-inter(1.9rem);
+                        color: $gray;
+                        line-height: 180%;
+                    }
+                }
+
+                & > .name-and-email {
+                    display: flex;
+                    column-gap: 0.8rem;
+                }
+
+                & > .message-area.input {
+                    align-items: flex-start;
+
+                    & > svg {
+                        margin-top: 0.2rem;
+                    }
+                    
+                    & > .message-zone {
+                        resize: none;
+                        outline: unset;
+                        border: none;
+
+                        position: relative;
+
+                        width: 100%;
+
+                        white-space: wrap;
+
+                        height: 16rem;
+
+                        &.placeholder:before {
+                            content: attr(data-before);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            @include font-inter(1.9rem);
+                            color: $gray;
+                            line-height: 180%;
+                        }
+                    }
+                }
+
+                & > .keep-up-to-date {
+                    display: flex;
+                    column-gap: 1.4rem;
+
+                    margin-top: 2.8rem;
+
+                    & > input.checkbox-keep-up-to-date {
+                        width: 2.5rem;
+                        height: 2.5rem;
+
+                        border: 1px solid $border-blue-opacity;
+                    }
+
+                    & > p.description {
+                        @include description(1.8rem, $gray);
+                    }
+                }
+
+                & > button.send-message-contact-btn {
+                    width: 100%;
+
+                    height: 6.5rem;
+
+                    display: grid;
+                    place-content: center;
+
+                    margin-top: 4rem;
+
+                    @include button(1.9rem, $light_yellow, $primary_blue_color);
+
+                }
+
+            }
+        }
+    }
+}
+
+section.frequent-questions {
+    padding: 14.6rem 0;
+
+    display: grid;
+    place-content: center;
+
+    background-color: $background-opacity-blue;
+
+    & > .frequent-questions-container {
+        & > .list-questions-container {
+            display: flex;
+            column-gap: 8.2rem;
+
+            margin-top: 3rem;
+
+            & > div {
+                & > ul.list-questions {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.2rem;
+
+                    width: 61.1rem;
+
+                    & > li.question {
+                        padding-bottom: 1.6rem;
+
+                        height: 6.8rem;
+
+                        overflow: hidden;
+
+                        border-bottom: 1px solid $primary_blue_color_opacity_2;
+
+                        transition: all 0.5s linear;
+
+                        cursor: pointer;
+                        
+                        & > .title-question {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 1.6rem;
+
+                            & > .circle {
+                                @include circle(1.4rem);
+                                
+                                background-color: $light_yellow;
+                            }
+
+                            & > h4 {
+                                @include font-cardo(2.4rem);
+                                font-weight: 700;
+                                line-height: 5.2rem;
+                                color: $primary_blue_color;
+                            }
+                        }
+
+                        & > p.answer {
+                            @include description(1.9rem, $gray);
+                        
+                            margin-top: 0.1rem;
+
+                            opacity: 0;
+
+                            transition: opacity 0.2s linear;
+                        }
+
+                        &.active {
+                            height: 23rem;
+
+                            & > p.answer {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}

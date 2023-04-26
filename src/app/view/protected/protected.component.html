@@ -1,0 +1,24 @@
+<div class="protected-page">
+    <app-header [titlePage]="'Protected Page'"
+        [descriptionPage]="'There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.'"></app-header>
+    <section class="protected">
+        <div class="protected-container">
+            <div class="title">
+                <h3>Password Protected</h3>
+                <div class="line"></div>
+            </div>
+            <p class="description">This page is password protected. If you are the website admin, or have access to this
+                page, please type your password below.</p>
+            <div class="input-password-container">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.7915 8.12484L20.5831 4.33317M22.7498 2.1665L20.5831 4.33317L22.7498 2.1665ZM12.339 12.5773C12.8983 13.1293 13.343 13.7864 13.6474 14.5109C13.9517 15.2353 14.1098 16.0129 14.1124 16.7987C14.1151 17.5845 13.9622 18.3631 13.6627 19.0896C13.3632 19.8161 12.923 20.4762 12.3673 21.0318C11.8116 21.5875 11.1516 22.0277 10.4251 22.3272C9.69855 22.6267 8.91998 22.7796 8.13416 22.7769C7.34835 22.7743 6.57081 22.6163 5.84633 22.3119C5.12185 22.0075 4.46473 21.5629 3.91281 21.0035C2.82745 19.8798 2.22688 18.3747 2.24046 16.8124C2.25404 15.2502 2.88067 13.7557 3.98539 12.651C5.09011 11.5463 6.58454 10.9196 8.14679 10.9061C9.70905 10.8925 11.2141 11.4931 12.3379 12.5784L12.339 12.5773ZM12.339 12.5773L16.7915 8.12484L12.339 12.5773ZM16.7915 8.12484L20.0415 11.3748L23.8331 7.58317L20.5831 4.33317L16.7915 8.12484Z"
+                        stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input placeholder="Enter your password" name="password" type="password" class="input-password">
+            </div>
+            <button class="submit-password-btn">Submit</button>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>

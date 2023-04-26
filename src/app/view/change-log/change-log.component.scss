@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'mixins';
+
+section.change-log {
+    padding: 20rem 0;
+
+    display: grid;
+    place-content: center;
+
+    & > .change-log-container {
+        width: 60rem;
+
+        padding: 5.4rem 8.9rem;
+
+        background-color: $background-blue-gray;
+
+        & > .circle {
+            @include circle(9rem);
+            
+            background-color: $light_yellow;
+
+            margin: 0 auto;
+
+            display: grid;
+            place-content: center;
+
+            & > h3 {
+                @include font-cardo(3rem);
+                font-weight: 700;
+                line-height: 130%;
+                text-align: center;
+            }
+
+        }
+
+        & > p.description {
+            margin: 0 auto;
+            margin-top: 2rem;
+
+            @include description(1.9rem, $gray);
+            line-height: 154.5%;
+
+            width: fit-content;
+
+        }
+    }
+}

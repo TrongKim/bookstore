@@ -1,0 +1,111 @@
+@import 'variables';
+@import 'mixins';
+
+section.significant {
+    padding: 15rem 0;
+
+    display: grid;
+    place-content: center;
+
+    & > .significant-container {
+        & > .image-significant {
+            width: 100%;
+
+            height: 70rem;
+
+            & > img {
+                height: 100%;
+            }
+        }
+
+        & > h3.month-and-tag {
+            @include font-cardo(2.4rem);
+            line-height: 5.2rem;
+            font-weight: 700;
+            color: $primary_blue_color;
+
+            margin-top: 1.5rem;
+        }
+
+        & > p.description-tag {
+            @include description(1.9rem, $gray);
+            line-height: 170%;
+
+            margin-top: 2.6rem;
+        }
+
+        & > .recommend-book-container {
+            margin-top: 4.4rem;
+
+            & > h3.recommend-book-title {
+                @include font-cardo(3rem);
+                line-height: 140%;
+                font-weight: 700;
+                color: $primary_blue_color;
+            }
+
+            & > p.description-recommend-book {
+                margin-top: 1.1rem;
+
+                @include description(1.9rem, $gray);
+                line-height: 170%;
+            }
+
+            & > ul.list-recommend-book {
+                margin-top: 2.2rem;
+                margin-left: 4.4rem;
+
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.2rem;
+
+                & > li.recommend-book {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 2.1rem;
+
+                    & > .circle {
+                        @include circle(1.5rem);
+                        
+                        background-color: $light_yellow;
+                    }
+
+                    & > p.title-book {
+                        @include font-inter(1.9rem);
+                        line-height: 154.5%;
+                        color: $primary_blue_color;
+                    }
+                }
+            }
+        }
+
+        & > .special-text-container {
+            height: 13.8rem;
+
+            background-color: $primary_blue_color;
+
+            display: grid;
+            place-content: center;
+
+            position: relative;
+
+            margin-top: 4.4rem;
+
+            & > .flags-container {
+                position: absolute;
+                top: 0;
+                left: 2.473rem;
+
+                display: flex;
+                column-gap: 1.29rem;
+            }
+
+            & > p.special-text {
+                @include font-inter(1.8rem);
+                font-weight: 500;
+                line-height: 180%;
+                color: $white;
+            }
+        }
+    }
+}

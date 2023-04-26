@@ -1,0 +1,248 @@
+@import 'variables';
+@import 'mixins';
+
+section.detail-product {
+    padding: 15rem 0;
+
+    display: grid;
+    place-content: center;
+
+    & > .detail-product-container {
+        width: 129.7rem;
+
+        & > .information-about-book {
+            display: flex;
+            justify-content: space-between;
+
+            height: 65rem;
+
+            & > .container-left {
+                width: 58rem;
+                
+                height: 100%;
+
+                background-color: $background-opacity-blue;
+
+                display: grid;
+                place-content: center;
+
+                & > .image-book {
+                    & > img {
+                        width: 38rem;
+                        height: 50.9rem;
+                    }
+                }
+            }
+
+            & > .container-right {
+                flex: 1;
+
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+
+                max-width: 63.1rem;
+
+                & > .content-container {
+                    width: 100%;
+
+                    & > h4.title-book {
+                        @include font-cardo(3.2rem);
+                        color: $primary_blue_color;
+                        text-align: start;
+                        
+                        width: fit-content;
+                    }
+
+                    & > p.price {
+                        margin-top: 0.6rem;
+
+                        @include font-inter(3rem);
+                        line-height: 170%;
+                        color: $light_yellow;
+                    }
+
+                    & > .description {
+                        margin-top: 2.6rem;
+
+                        @include description(1.9rem, $gray);
+                    }
+
+                }
+
+                & > ul.parameters {
+                    margin-right: auto;
+                    margin-top: 2rem;
+
+                    & > li.parameter {
+                        display: flex;
+                        column-gap: 4rem;
+
+                        & > p {
+                            @include description(1.9rem, $gray);
+                            line-height: 250%;
+                        }
+
+                        & > p.name-parameter {
+                            width: 9rem;
+                        }
+
+                    }
+                }
+
+                & > .add-cart-container {
+                    display: flex;
+                    column-gap: 1rem;
+
+                    margin-top: 3.4rem;
+                    margin-right: auto;
+
+                    & > .input-number-book-order {
+                        width: 12rem;
+                        height: 6.5rem;
+
+                        @include button(2rem, $white, $primary_blue_color);
+
+                        border: 1px solid $light_yellow;
+
+                        display: grid;
+                        place-content: center;
+
+                        & > div[contenteditable="true"] {
+                            min-width: 1rem;
+
+                            outline: unset;
+                            border: unset;
+                        }
+                    }
+
+                    & > button.add-cart-btn {
+                        width: 37.745rem;
+                        height: 6.5rem;
+
+                        @include button(1.9rem, $light_yellow, $primary_blue_color);
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        column-gap: 1.245rem;
+
+                        & > p {
+                            @include font-cardo(1.9rem);
+                            color: $primary_blue_color;
+                            line-height: 125%;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .more-information-about-book-container {
+            margin-top: 12rem;
+
+            & > .nav-change-information {
+                display: flex;
+                column-gap: 5rem;
+
+                margin: 0 auto;
+
+                width: fit-content;
+
+                & > button {
+                    height: 6.5rem;
+
+                    width: 31.5rem;
+
+                    text-transform: uppercase;
+
+                    @include button(1.8rem, $background-opacity-blue, $primary_blue_color);
+                }
+
+                & > button.choice {
+                    @include button(1.8rem, $primary_blue_color, $white);
+                }
+
+            }
+
+            & > .more-information {
+                margin-top: 4.8rem;
+
+                display: flex;
+                column-gap: 9.2rem;
+
+                & > div {
+                    & > h4.title {
+                        @include font-cardo(3.2rem);
+                        font-weight: 700;
+                        letter-spacing: -0.02em;
+                        color: $primary_blue_color;
+
+                        width: fit-content;
+
+                        margin: unset;
+                    }
+
+                    & > p.description {
+                        margin-top: 1.1rem;
+
+                        @include description(1.9rem, $gray);
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.incentives {
+    height: 38.5rem;
+
+    display: grid;
+    place-content: center;
+
+    background-color: $light_yellow;
+
+    & > .incentives-container {
+        width: 129.7rem;
+
+        & > ul.list-incentives {
+            display: flex;
+            column-gap: 9rem;
+
+            & > li.incentive {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & > .icon {
+                    width: 8rem;
+                    height: 8rem;
+
+                    display: grid;
+                    place-content: center;
+
+                    background-color: $primary_blue_color;
+                }
+
+                & > h4.title-incentive {
+                    @include font-cardo(3.2rem);
+                    font-weight: 700;
+                    letter-spacing: -0.02em;
+                    color: $primary_blue_color;
+
+                    width: fit-content;
+
+                    margin-top: 1.9rem;
+                }
+
+                & > p.description {
+                    @include description(1.9rem, $primary_blue_color);
+                    text-align: center;
+
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

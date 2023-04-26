@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'mixins';
+
+section.licenses {
+    padding: 0 31rem;
+    padding-top: 13.5rem;
+    padding-bottom: 13rem;
+
+    & > .licenses-container {
+        width: 100%;
+
+        & > .photography-container {
+            & > h3.title-photography {
+                @include font-cardo(3rem);
+                line-height: 130%;
+                color: $primary_blue_color;
+                font-weight: 700;
+            }
+            
+            & > p.description {
+                @include description(1.9rem, $gray);
+                line-height: 170%;
+
+                margin-top: 1.3rem;
+
+                & > span {
+                    color: $primary_blue_color;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        & > .style-guide-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 7.5rem;
+
+            margin-top: 7.5rem;
+
+            & > div {
+                & > h4 {
+                    @include font-cardo(2rem);
+                    font-weight: 700;
+                    line-height: 170%;
+                    color: $primary_blue_color;
+                }
+
+                & > p {
+                    @include description(1.9rem, $gray);
+                    line-height: 170%;
+
+                    & > span {
+                        color: $primary_blue_color;
+                        font-weight: 700;
+                    }
+                }
+
+                &.fonts-container {
+                    & > h4 {
+                        @include font-cardo(3rem);
+                    }
+                }
+            }
+        }
+    }
+}

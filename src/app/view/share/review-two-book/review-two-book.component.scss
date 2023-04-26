@@ -1,0 +1,214 @@
+@import 'variables';
+@import 'mixins';
+
+section.author-book {
+    height: 82.7rem;
+
+    display: grid;
+    place-content: center;
+
+    
+    &.white {
+        background-color: $white;
+    }
+
+    &.blue {
+        background-color: $background-opacity-blue;
+    }
+
+    & > .author-book-content {
+        height: 53.3rem;
+
+        & > .title {
+            height: 7.6rem;
+
+            @include font-cardo(45px);
+            color: $primary_blue_color;
+
+            width: fit-content;
+
+            margin: 0 auto;
+        }
+
+        & > .books {
+            display: flex;
+            column-gap: 6.6rem;
+
+            margin-top: 5.7rem;
+
+            & > .container-left {
+                & > .about-first-book {
+                    display: flex;
+
+                    width: 62.1rem;
+                    & > .some-information-about-book {
+                        flex: 1;
+
+                        & > .container-about-book {
+                            max-width: 28.1rem;
+                            width: 100%;
+
+                            height: 100%;
+
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            margin-left: auto;
+
+                            & > .title-book {
+                                height: 3.8rem;
+
+                                @include font-cardo(32px);
+                                color: $primary_blue_color;
+                            }
+
+                            & > p {
+                                @include font-inter(19px);
+                                color: $gray;
+                                line-height: 180%;
+
+                                margin-top: 1.4rem;
+                            }
+
+                            & > .parameter-book {
+                                margin-top: 3rem;
+
+                                display: flex;
+                                justify-content: space-between;
+            
+                                width: 100%;
+            
+                                height: 6.2rem;
+            
+                                & > .parameter-child {
+                                    display: flex;
+                                    column-gap: 1.3rem;
+                                    & > .circle {
+                                        @include circle(16px);
+                                        background-color: $light_yellow;
+            
+                                        margin-top: 0.7rem;
+                                    }
+            
+                                    & > .title-and-info {
+                                        & > h4 {
+                                            @include font-cardo(24px);
+                                            color: $primary_blue_color;
+                                        }
+            
+                                        & > span {
+                                            margin-top: 3px;
+            
+                                            @include font-inter(18px);
+                                            color: $gray;
+                                        }
+                                    }
+                                }
+                            }
+
+                            & > .order-btn {
+                                @include button(19px, $white, $primary_blue_color);
+                                
+                                border: 1px solid $light_yellow;
+
+                                width: 22rem;
+
+                                height: 6.5rem;
+
+                                margin-top: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > .container-right {
+                & > .about-another-book {
+                    display: flex;
+
+                    width: 62.1rem;
+                    & > .some-information-about-book {
+                        flex: 1;
+
+                        & > .container-about-book {
+                            max-width: 28.1rem;
+                            width: 100%;
+
+                            height: 100%;
+
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            margin-left: auto;
+
+                            & > .title-book {
+                                height: 3.8rem;
+
+                                @include font-cardo(32px);
+                                color: $primary_blue_color;
+                            }
+
+                            & > p {
+                                @include font-inter(19px);
+                                color: $gray;
+                                line-height: 180%;
+
+                                margin-top: 1.4rem;
+                            }
+
+                            & > .parameter-book {
+                                margin-top: 3rem;
+
+                                display: flex;
+                                justify-content: space-between;
+            
+                                width: 100%;
+            
+                                height: 6.2rem;
+            
+                                & > .parameter-child {
+                                    display: flex;
+                                    column-gap: 1.3rem;
+                                    & > .circle {
+                                        @include circle(16px);
+                                        background-color: $light_yellow;
+            
+                                        margin-top: 0.7rem;
+                                    }
+            
+                                    & > .title-and-info {
+                                        & > h4 {
+                                            @include font-cardo(24px);
+                                            color: $primary_blue_color;
+                                        }
+            
+                                        & > span {
+                                            margin-top: 3px;
+            
+                                            @include font-inter(18px);
+                                            color: $gray;
+                                        }
+                                    }
+                                }
+                            }
+
+                            & > .order-btn {
+                                @include button(19px, $white, $primary_blue_color);
+                                
+                                border: 1px solid $light_yellow;
+
+                                width: 22rem;
+
+                                height: 6.5rem;
+
+                                margin-top: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

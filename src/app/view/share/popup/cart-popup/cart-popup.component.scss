@@ -1,0 +1,187 @@
+@import 'variables';
+@import 'mixins';
+
+.backdrop {
+    @include backdrop;
+}
+
+.cart-popup {
+    width: 80.1rem;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    & > .title-popup {
+        padding: 3.5rem 7.6rem;
+
+        background-color: $light_yellow;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > h4.title {
+            @include font-cardo(5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: $primary_blue_color;
+
+            width: fit-content;
+
+            margin: unset;
+        }
+
+        & > svg {
+            cursor: pointer;
+        }
+    }
+
+    & > .content-cart-popup {
+        padding: 6.2rem 7.6rem;
+
+        background-color: $white;
+
+        & > ul.cart-list-product {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+
+            max-height: 35rem;
+
+            overflow-y: auto;
+
+            & > li.product {
+                display: flex;
+                column-gap: 3.8rem;
+
+                position: relative;
+
+                & > .container-left {
+                    width: fit-content;
+
+                    width: 13.3rem;
+
+                    height: 17.8rem;
+
+                    & > img {
+                        width: 117%;
+
+                        object-position: -11px -2px;
+                    }
+                }
+
+                & > .container-right {
+                    flex: 1;
+
+                    & > h5.title-book {
+                        @include font-cardo(2.4rem);
+                        font-weight: 700;
+                        line-height: 52px;
+                        color: $primary_blue_color;
+
+                        width: fit-content;
+                    }
+
+                    & > p.price {
+                        margin-top: 0.1rem;
+
+                        @include description(2rem, $gray);
+                        font-weight: 500;
+                    }
+
+                    & > h3.remove-btn {
+                        margin-top: revert;
+
+                        width: fit-content;
+
+                        @include font-cardo(3.5rem);
+                        color: $primary_blue_color;
+
+                        cursor: pointer;
+                    }
+                }
+
+                & > .number-order {
+                    padding: 0 2.5rem;
+
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    width: 12rem;
+                    height: 6.2rem;
+
+                    display: flex;
+                    align-items: center;
+
+                    background: $light-white-gray;
+
+                    border: 1px solid $white-gray;
+
+                    @include font-inter(2rem);
+                    line-height: 140%;
+                    font-weight: 500;
+                    color: $gray;
+                }
+            }
+        }
+
+        & > .line {
+            border: 1px solid $primary_blue_color;
+            opacity: 0.2;
+
+            width: 100%;
+            height: 0;
+
+            margin-top: 6.5rem;
+        }
+
+        & > .check-out-container {
+            padding: 0 7.6rem;
+            padding-top: 2.5rem;
+
+            & > .sub-total {
+                height: 5.2rem;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & > p.name-sub-total {
+                    @include font-cardo(2.4rem);
+                    line-height: 5.2rem;
+                    color: $primary_blue_color;
+
+                    height: 100%;
+
+                    display: grid;
+                    place-content: center;
+                }
+
+                & > h4.sub-total-price {
+                    width: fit-content;
+
+                    @include font-inter(2rem);
+                    line-height: 170%;
+                    font-weight: 700;
+                    color: $primary_blue_color;
+                }
+            }
+
+            & > button.checkout-btn {
+                width: 100%;
+
+                height: 6.5rem;
+
+                @include button(1.9rem, $light_yellow, $primary_blue_color);
+
+                margin-top: 6.1rem;
+
+            }
+        }
+
+    }
+}

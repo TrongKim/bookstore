@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+
+section.read-free-chapter {
+    height: 81.7rem;
+
+    display: grid;
+    place-content: center;
+
+    & > .read-free-chapter-container {
+        width: 130rem;
+
+        height: 505.65px;
+
+        background-color: $light_yellow;
+
+        display: grid;
+        place-content: center;
+
+        & > .content-container {
+            width: 84rem;
+
+            display: grid;
+            place-content: center;
+            
+            & > .title {
+                & > .line {
+                    border: 3px solid $primary_blue_color;
+
+                    margin-top: 1.7rem;
+                }
+            }
+
+            & > p.description {
+                @include font-inter(1.9rem);
+                color: $primary_blue_color;
+                line-height: 180%;
+                text-align: center;
+
+                margin: 0 auto;
+                margin-top: 2rem;
+
+                max-width: 65.7rem;
+            }
+
+            & > .submit-email-container {
+                margin-top: 3.8rem;
+
+                display: flex;
+                column-gap: 1.1rem;
+
+                & > input.input-email {
+                    width: 52.9rem;
+                    height: 6.5rem;
+
+                    background-color: $white;
+
+                    padding: 1.7rem 2.4rem;
+
+                    box-sizing: border-box;
+
+                    outline: unset;
+                    border: unset;
+
+                    @include font-inter(1.7rem);
+                    line-height: 180%;
+                    font-weight: 700;
+                    color: $primary_blue_color;
+
+                    &::placeholder {
+                        @include font-inter(1.7rem);
+                        line-height: 180%;
+                        color: $gray;
+                    }
+
+                }
+
+                & > button.subscribe-button {
+                    width: 30rem;
+                    height: 6.4rem;
+
+                    @include font-cardo(1.9rem);
+                    font-weight: 700;
+                    line-height: 125%;
+                    letter-spacing: 0.02em;
+                    color: $white;
+
+                    background-color: $primary_blue_color;
+                }
+            }
+        }
+    }
+}

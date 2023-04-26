@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'mixins';
+
+section.trademark {
+    height: 60.7rem;
+
+    background-color: $white;
+
+    display: grid;
+    place-content: center;
+
+    & > .trademark-container {
+        height: 33.5rem;
+
+        & > ul.menu-trademark{
+            display: flex;
+            justify-content: space-between;
+    
+            height: 21.9rem;
+
+            margin-top: 4rem;
+    
+            & > li.trademark {
+                width: 25rem;
+
+                & > .logo {
+                    display: grid;
+                    place-content: center;
+
+                    & > img {
+                        height: 88.98px;
+                    }
+                }
+
+                & > h3.name-trademark {
+                    @include font-cardo(2.4rem);
+    
+                    color: $primary_blue_color;
+    
+                    height: 2.9rem;
+    
+                    width: fit-content;
+    
+                    display: grid;
+                    place-content: center;
+    
+                    margin: 0 auto;
+                    margin-top: 28.54px;
+                }
+
+                & > p.about-trademark {
+                    @include font-inter(1.8rem);
+                    color: $gray;
+                    line-height: 170%;
+
+                    margin-top: 9.47px;
+
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}
