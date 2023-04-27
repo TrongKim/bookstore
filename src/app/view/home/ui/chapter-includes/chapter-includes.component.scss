@@ -1,0 +1,140 @@
+@import 'variables';
+@import 'mixins';
+
+section.chapter-includes {
+    padding: 14.5rem 0;
+
+    background-color: $background-opacity-blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .chapter-includes-container {
+        & > ul.chapter-list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 4rem;
+            row-gap: 4rem;
+
+            margin-top: 5rem;
+
+            & > li {
+                background-color: $white;
+
+                padding: 4.8rem 5.4rem;
+
+                max-width: 63rem;
+
+                & > h4.title-chapter {
+                    @include font-cardo(2.4rem);
+
+                    color: $primary_blue_color;
+
+                    width: fit-content;
+                }
+
+                & > p.description-chapter {
+                    margin-top: 1.4rem;
+
+                    @include font-inter(1.9rem);
+                    color: $gray;
+                    line-height: 180%;
+                }
+
+                & > .parameter-chapter {
+                    margin-top: 2.5rem;
+
+                    display: flex;
+                    column-gap: 1.6rem;
+
+                    & > div {
+                        display: flex;
+                        align-items: center;
+
+                        & > .circle {
+                            @include circle(1.6rem);
+
+                            background-color: $light_yellow;
+
+                            margin-right: 1.3rem;
+                        }
+
+                        & > h5 {
+                            @include font-cardo(2.2rem);
+                            color: $primary_blue_color;
+                        }
+
+                        & > p {
+                            @include font-inter(1.8rem);
+                            line-height: 170%;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > button.free-trail-btn {
+            @include button(19px, $light_yellow, $primary_blue_color);
+            
+            width: 43.4rem;
+            height: 6.8rem;
+
+            display: grid;
+            place-content: center;
+
+            border: none;
+            outline: none;
+
+            margin: 0 auto;
+            margin-top: 7.9rem;
+        }
+
+        & > .question {
+            margin: 0 auto;
+
+            width: fit-content;
+
+            margin-top: 3.2rem;
+
+            & > p {
+                max-width: 27rem;
+
+                @include font-inter(1.8rem);
+                color: $gray;
+                line-height: 170%;
+    
+                & > span {
+                    color: $primary_blue_color;
+    
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1350px) {
+    section.chapter-includes > .chapter-includes-container > ul.chapter-list {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    section.chapter-includes > .chapter-includes-container > ul.chapter-list {
+        & > li > .parameter-chapter {
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+    } 
+}
+
+@media only screen and (max-width: 460px) {
+    section.chapter-includes > .chapter-includes-container > ul.chapter-list {
+        & > li {
+            padding: 4.8rem 2rem;
+        }
+    } 
+}

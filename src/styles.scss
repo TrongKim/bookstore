@@ -83,14 +83,14 @@ p,h1,h2,h3,h4,li,div {
         @include font-cardo(45px);
         color: $primary_blue_color;
 
-        height: 5.4rem;
-
         display: grid;
         place-content: center;
 
         width: fit-content;
 
         margin-bottom: 2.2rem;
+
+        text-align: center;
     }
 
     & > .line {
