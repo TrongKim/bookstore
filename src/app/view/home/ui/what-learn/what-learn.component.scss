@@ -2,7 +2,7 @@
 @import 'mixins';
 
 section.what-learn {
-    height: 110.8rem;
+    padding: 14.5rem 0;
 
     display: flex;
     align-items: center;
@@ -10,8 +10,6 @@ section.what-learn {
 
     & > .what-learn-container {
         width: 130rem;
-
-        height: 81.9rem;
 
         & > .information-about-learner {
             display: flex;

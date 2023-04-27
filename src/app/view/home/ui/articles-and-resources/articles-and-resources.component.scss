@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'mixins';
+
+section.articles-and-resources {
+    height: 101.6rem;
+
+    background-color: $background-opacity-blue;
+
+    display: grid;
+    place-content: center;
+
+    & > .articles-and-resources-container {
+        width: 130rem;
+
+        & > ul.list-card {
+            margin-top: 5rem;
+
+            display: flex;
+            column-gap: 3.5rem;
+
+            & > li.card {
+                height: 60rem;
+                
+                width: 41rem;
+
+                & > .image-card-container {
+                    width: 100%;
+
+                    height: 32.6rem;
+
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                & > .content-about-card {
+                    padding: 2.7rem 3.15rem;
+
+                    & > h4.title-card {
+                        width: fit-content;
+
+                        @include font-cardo(2.4rem);
+                        color: $primary_blue_color;
+                        font-weight: 700;
+                        letter-spacing: -0.02em;
+                    
+                    }
+
+                    & > p.description {
+                        @include font-inter(1.9rem);
+                        line-height: 180%;
+                        color: $gray;
+
+                        margin-top: 1.4rem;
+                    }
+
+                    & > .end-card-footer {
+                        margin-top: 2.7rem;
+
+                        display: flex;
+
+                        & > .container-left {
+                            width: fit-content;
+
+                            & > p {
+                                @include font-cardo(1.8rem);
+                                line-height: 125%;
+                                font-weight: 700;
+                                color: $primary_blue_color;
+                            }
+
+                            & > .line {
+                                width: 100%;
+
+                                height: 0;
+
+                                border: 1px solid $primary_blue_color;
+                            }
+                        }
+
+                        & > .container-right {
+                            flex: 1;
+
+                            display: flex;
+                            justify-content: flex-end;
+                            & > p.author-and-create-at {
+                                @include font-inter(1.7rem);
+                                line-height: 125%;
+                                letter-spacing: unset;
+                                color: $primary_blue_color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

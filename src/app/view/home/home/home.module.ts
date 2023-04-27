@@ -13,6 +13,8 @@ import { AboutAuthorComponent } from "../ui/about-author/about-author.component"
 import { OrderNowComponent } from "../ui/order-now/order-now.component";
 import { WhatLearnComponent } from "../ui/what-learn/what-learn.component";
 import { ChapterIncludesComponent } from "../ui/chapter-includes/chapter-includes.component";
+import { WhatReaderSayComponent } from "../ui/what-reader-say/what-reader-say.component";
+import { ArticlesAndResourcesComponent } from "../ui/articles-and-resources/articles-and-resources.component";
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { ChapterIncludesComponent } from "../ui/chapter-includes/chapter-include
         AboutAuthorComponent,
         OrderNowComponent,
         WhatLearnComponent,
-        ChapterIncludesComponent
+        ChapterIncludesComponent,
+        WhatReaderSayComponent,
+        ArticlesAndResourcesComponent
     ],
     exports: [
         HomeComponent

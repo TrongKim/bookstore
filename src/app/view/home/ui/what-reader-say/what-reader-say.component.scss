@@ -1,0 +1,247 @@
+@import 'variables';
+@import 'mixins';
+
+section.what-reader-say {
+    padding: 14rem 0;
+
+    background-color: $white;
+
+    display: grid;
+    place-content: center;
+
+    & > .what-reader-say-container {
+        display: flex;
+
+        & > .container-left {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            & > .container-child {
+                width: 41.8rem;
+
+                & > .title {
+                    max-width: 32.6rem;
+
+                    margin: unset;
+
+                    & > h3 {
+                        margin-bottom: 2.7rem;
+
+                        height: unset;
+                    }
+
+                    & > .line {
+                        width: 49.26px;
+
+                        margin: unset;
+                    }
+                }
+
+                & > p.description {
+                    @include font-inter(1.9rem);
+                    line-height: 180%;
+                    color: $gray;
+
+                    margin-top: 2.9rem;
+                }
+
+                & > .ratings {
+                    margin-top: 4.6rem;
+
+                    & > ul {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 0.5rem;
+
+                        & > li.circle {
+                            @include circle(2rem);
+                            
+                            background-color: $light_yellow;
+                        }
+
+                        & > li.half-circle {
+                            @include circle(2rem);
+                            
+                            overflow: hidden;
+
+                            border: 1px solid $light_yellow;
+
+                            & > .background-yellow {
+                                width: 50%;
+                                height: 100%;
+
+                                background-color: $light_yellow;
+                            }
+                        }
+
+                        & > li.averate {
+                            @include font-cardo(2.2rem);
+                            font-weight: 700;
+                            color: $primary_blue_color;
+                        }
+                    }
+
+                    & > p {
+                        @include font-inter(1.9rem);
+                        line-height: 180%;
+                        color: $primary_blue_color;
+
+                        margin-top: 0.6rem;
+                    }
+                }
+            }
+        }
+
+        & > .container-right {
+            width: 77rem;
+
+            display: flex;
+            column-gap: 3rem;
+
+            & > div > .card {
+                padding: 3.6rem 3.1rem;
+
+                background-color: $primary_blue_color;
+
+                max-width: 37rem;
+                
+                & > .name-and-avatar {
+                    display: flex;
+                    column-gap: 2rem;
+
+                    & > .name-and-ratings {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        
+                        & > p {
+                            @include font-cardo(2.4rem);
+                            font-weight: 700;
+                            color: $white;
+
+                            margin-bottom: 0.8rem;
+                        }
+
+                        & > .ratings {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 0.5rem;
+    
+                            & > li.circle {
+                                @include circle(12.67px);
+                                
+                                background-color: $light_yellow;
+                            }
+    
+                            & > li.half-circle {
+                                @include circle(12.67px);
+                                
+                                overflow: hidden;
+    
+                                border: 1px solid $light_yellow;
+    
+                                & > .background-yellow {
+                                    width: 50%;
+                                    height: 100%;
+    
+                                    background-color: $light_yellow;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                & > p.special-description {
+                    @include font-cardo(2.2rem);
+                    color: $white;
+                    font-weight: 700;
+
+                    margin-top: 2.2rem;
+                }
+
+                & > p.normal-description {
+                    margin-top: 1.2rem;
+
+                    @include font-inter(1.9rem);
+                    line-height: 180%;
+                    color: $primary_blue_color_opacity_low;
+                }
+            }
+
+            & > .cards-left {
+                display: flex;
+                flex-direction: column;
+                row-gap: 3.1rem;
+            }
+
+            & > .card-right {
+                margin-top: 21rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.what-reader-say > .what-reader-say-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 4rem;
+
+        & > .container-left > .container-child {
+            & > .title {
+                margin: 0 auto;
+    
+                & > .line {
+                    margin: 0 auto;
+                }
+            }
+
+            & > p.description {
+                text-align: center;
+            }
+
+            & > .ratings {
+                & > ul {
+                    margin: 0 auto;
+                    width: fit-content;
+                }
+
+                & > p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 865px) {
+    section.what-reader-say > .what-reader-say-container {
+        & > .container-right {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 3rem;
+    
+            flex: 1;
+    
+            padding: 0 2.5rem;
+    
+            width: auto;
+    
+            & > .card-right {
+                margin-top: unset;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    section.what-reader-say > .what-reader-say-container {
+        & > .container-left > .container-child {
+            width: auto;
+        }
+    }
+}
