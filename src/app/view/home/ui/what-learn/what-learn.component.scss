@@ -1,0 +1,100 @@
+@import 'variables';
+@import 'mixins';
+
+section.what-learn {
+    height: 110.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .what-learn-container {
+        width: 130rem;
+
+        height: 81.9rem;
+
+        & > .information-about-learner {
+            display: flex;
+
+            margin-top: 5.3rem;
+
+            & > .container-left {
+                flex: 1;
+
+                display: flex;
+                align-items: center;
+
+                & > ul.list-item-can-learn {
+                    width: 100%;
+                    max-width: 61.1rem;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 3rem;
+                    row-gap: 3.2rem;
+
+                    & > li {
+                        width: 29rem;
+
+                        padding: 4.1rem 3.3rem;
+
+                        background-color: $background-opacity-blue;
+
+                        & > .icon {
+                            @include circle(5rem);
+                            
+                            background-color: $light_yellow;
+
+                            display: grid;
+                            place-content: center;
+
+                            @include font-cardo(2.4rem);
+                            color: $primary_blue_color;
+                        }
+
+                        & > p.description {
+                            @include font-cardo(2.4rem);
+                            line-height: 140%;
+                            color: $primary_blue_color;
+                            
+                            margin-top: 3.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.what-learn > .what-learn-container {
+        flex: 1;
+
+        width: auto;
+
+        padding: 0 2.5rem;
+
+        & > .information-about-learner {
+            flex-direction: column-reverse;
+            align-items: center;
+            row-gap: 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    section.what-learn > .what-learn-container > .information-about-learner {
+        & > .container-left > ul.list-item-can-learn {
+            justify-content: center;
+        }
+
+        & > .container-right {
+            width: 100%;
+
+            & > img {
+                width: 100%;
+            }
+        }
+    }
+
+}
