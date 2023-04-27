@@ -2,7 +2,8 @@
 @import 'mixins';
 
 section.trademark {
-    height: 60.7rem;
+    padding-top: 13.1rem;
+    padding-bottom: 14.1rem;
 
     background-color: $white;
 
@@ -10,14 +11,11 @@ section.trademark {
     place-content: center;
 
     & > .trademark-container {
-        height: 33.5rem;
 
         & > ul.menu-trademark{
             display: flex;
             justify-content: space-between;
     
-            height: 21.9rem;
-
             margin-top: 4rem;
     
             & > li.trademark {
@@ -61,4 +59,13 @@ section.trademark {
         }
     }
 
+}
+
+@media only screen and (max-width: 1125px) {
+    section.trademark > .trademark-container > ul.menu-trademark {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        row-gap: 4rem;
+    }
 }
