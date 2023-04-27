@@ -2,16 +2,15 @@
 @import 'mixins';
 
 section.articles-and-resources {
-    height: 101.6rem;
+    padding: 14.5rem 0;
 
     background-color: $background-opacity-blue;
 
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     & > .articles-and-resources-container {
-        width: 130rem;
-
         & > ul.list-card {
             margin-top: 5rem;
 
@@ -93,6 +92,31 @@ section.articles-and-resources {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1350px) {
+    section.articles-and-resources > .articles-and-resources-container {
+        & > ul.list-card {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 3.5rem;
+
+            & > li.card {
+                height: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    section.articles-and-resources > .articles-and-resources-container {
+        & > ul.list-card > li.card > .content-about-card {
+            & > .end-card-footer > .container-right {
+                display: none;
             }
         }
     }
