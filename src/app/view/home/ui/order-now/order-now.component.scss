@@ -1,0 +1,101 @@
+@import 'variables';
+@import 'mixins';
+
+section.order-now {
+    padding: 3.7rem 0;
+
+    background-color: $primary_blue_color;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .order-now-container {
+        width: 133.4rem;
+
+        display: flex;
+
+        & > .container-left {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            & > .content-container {
+                max-width: 56.7rem;
+                width: 100%;
+
+                & > .title {
+                    margin: unset;
+
+                    & > h3 {
+                        width: fit-content;
+
+                        margin: unset;
+
+                        color: $white;
+                    }
+
+                    & > .line {
+                        margin: unset;
+                        margin-top: 2.2rem;
+                    }
+                }
+
+                & > p {
+                    margin-top: 2.2rem;
+
+                    @include font-inter(19px);
+                    color: $primary_blue_color_opacity_low;
+                    line-height: 180%;
+                }
+
+                & > .order-btn {
+                    @include button(1.9rem, transparent, $white);
+
+                    width: 22rem;
+                    height: 6.5rem;
+
+                    display: grid;
+                    place-content: center;
+
+                    border: 1px solid $light_yellow;
+
+                    margin-top: 3.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.order-now > .order-now-container {
+        flex: 1;
+
+        width: auto;
+
+        padding: 0 2.5rem;
+
+        & > .container-left > .content-container > .title > h3 {
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 965px) {
+    section.order-now > .order-now-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 4rem;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    section.order-now > .order-now-container > .container-right {
+        width: 100%;
+
+        & > img {
+            width: 100%;
+        }
+    }
+}

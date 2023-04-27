@@ -10,6 +10,7 @@ import { TrademarkModule } from '../../share/trademark/trademark.module';
 import { ReviewTwoBookModule } from '../../share/review-two-book/review-two-book.module';
 import { ReviewNewBookComponent } from "../ui/review-new-book/review-new-book.component";
 import { AboutAuthorComponent } from "../ui/about-author/about-author.component";
+import { OrderNowComponent } from "../ui/order-now/order-now.component";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AboutAuthorComponent } from "../ui/about-author/about-author.component"
     declarations: [
         HomeComponent,
         ReviewNewBookComponent,
-        AboutAuthorComponent
+        AboutAuthorComponent,
+        OrderNowComponent
     ],
     exports: [
         HomeComponent
