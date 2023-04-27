@@ -138,6 +138,7 @@ section.about-author {
 @media only screen and (max-width: 1350px) {
     section.about-author > .about-author-container {
         flex-direction: column;
+        align-items: center;
 
         & > .container-right > .container-about-author {
             & > .desc {
