@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from "./about.component";
 import { ReviewTwoBookModule } from '../../share/review-two-book/review-two-book.module';
 import { TrademarkModule } from '../../share/trademark/trademark.module';
+import { AboutOwnerComponent } from "../ui/about-owner/about-owner.component";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { TrademarkModule } from '../../share/trademark/trademark.module';
         ])
     ],
     declarations: [
-        AboutComponent
+        AboutComponent,
+        AboutOwnerComponent
     ],
     exports: [
         AboutComponent
