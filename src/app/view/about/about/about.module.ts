@@ -8,6 +8,7 @@ import { AboutComponent } from "./about.component";
 import { ReviewTwoBookModule } from '../../share/review-two-book/review-two-book.module';
 import { TrademarkModule } from '../../share/trademark/trademark.module';
 import { AboutOwnerComponent } from "../ui/about-owner/about-owner.component";
+import { StoryComponent } from "../ui/story/story.component";
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { AboutOwnerComponent } from "../ui/about-owner/about-owner.component";
     ],
     declarations: [
         AboutComponent,
-        AboutOwnerComponent
+        AboutOwnerComponent,
+        StoryComponent
     ],
     exports: [
         AboutComponent
