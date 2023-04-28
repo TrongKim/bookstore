@@ -66,6 +66,32 @@
                         Order Today
                     </li>
                 </ul>
+                <i (click)="clickEventActiveMenuResponsive()" class="fa-solid fa-bars"></i>
+                <ul class="menu-responsive" [ngClass]="{'active': isActiveMenuResponsive}">
+                    <li [routerLink]="['/home']">
+                        <p>Home</p>
+                        <div class="line"></div>
+                    </li>
+                    <li [routerLink]="['/pages']">
+                        <p>Pages</p>
+                        <div class="line"></div>
+                    </li>
+                    <li [routerLink]="['/about']">
+                        <p>About</p>
+                        <div class="line"></div>
+                    </li>
+                    <li [routerLink]="['/services']">
+                        <p>Services</p>
+                        <div class="line"></div>
+                    </li>
+                    <li [routerLink]="['/contact']">
+                        <p>Contact</p>
+                        <div class="line"></div>
+                    </li>
+                    <li (click)="clickEventCloseMenuResponsive()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="content-page-container">

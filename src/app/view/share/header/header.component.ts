@@ -10,10 +10,19 @@ export class HeaderComponent implements OnInit {
   @Input() descriptionPage: string = 'Not have any description here'
 
   isShowCartPopup: boolean = false;
+  isActiveMenuResponsive: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickEventActiveMenuResponsive(): void {
+    this.isActiveMenuResponsive = true;
+  }
+
+  clickEventCloseMenuResponsive(): void {
+    this.isActiveMenuResponsive = false;
   }
 
   clickEventShowCartPopup(): void {

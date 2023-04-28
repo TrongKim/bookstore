@@ -2,12 +2,11 @@
 @import 'mixins';
 
 header {
-    height: 52.7rem;
-
     background-color: $primary_blue_color;
 
     & > .container {
         padding-top: 1.5rem;
+        padding-bottom: 11.9rem;
         & > .top-navbar {
             display: flex;
             justify-content: space-between;
@@ -81,6 +80,93 @@ header {
                         height: 100%;
                     }
                 }
+
+                & > i {
+                    color: $white;
+                    font-size: 3rem;
+                    margin: auto;
+
+                    display: none;
+
+                    cursor: pointer;
+                }
+
+                & > .menu-responsive {
+                    width: 100vw;
+
+                    height: 80vh;
+
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+
+                    background-color: $light-white-gray;
+
+                    flex-direction: column;
+
+                    display: none;
+
+                    transform: translateY(-100%);
+
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    & > li {
+                        @include font-cardo(2.4rem);
+                        color: $primary_blue_color;
+                        font-weight: 700;
+                        line-height: 170%;
+
+                        flex: 1;
+
+                        display: grid;
+                        place-content: center;
+
+                        border-bottom: 1px solid $primary_blue_color_opacity_2;
+
+                        cursor: pointer;
+
+                        transition: all 0.2s linear;
+
+                        & > i {
+                            font-size: 3rem;
+                        }
+
+                        & > p {
+                            width: fit-content;
+
+                            margin: 0 auto;
+                        }
+
+                        & > .line {
+                            width: 0;
+                            
+                            height: 0;
+                            
+                            border: 1px solid $light_yellow;
+                            
+                            margin: 0 auto;
+
+                            transition: all 0.2s linear;
+                        }
+
+                        &:hover {
+                            color: $light_yellow;
+
+                            & > .line {
+                                width: 8.5rem;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        transform: translateY(0);
+
+                        opacity: 1;
+                    }
+
+                }
             }
         }
 
@@ -115,5 +201,101 @@ header {
             }
         }
 
+    }
+}
+
+
+@media only screen and (max-width: 1350px) {
+    header {
+        height: unset;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    header > .container > .top-navbar > .container-right > ul.menu > li.button-order {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 891px) {
+    header > .container > .top-navbar > .container-left > .icons-contact {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    header > .container > .top-navbar > .container-right {
+        & > ul.menu {
+            display: none;
+        }
+
+        & > ul.menu-responsive {
+            display: flex;
+        }
+
+        & > i {
+            display: block;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 664px) {
+    header > .container > .content-page-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    section.review-new-book > .container > .about-book > .container-left {
+        & > .title-and-description {
+            & > h2 {
+                font-size: 4.5rem;
+            }
+        }
+
+        & > .parameter {
+            margin-top: 4.9rem;
+
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+
+            max-width: 58rem;
+
+            height: 6.3rem;
+
+            & > .parameter-child {
+                & > .circle {
+                    @include circle(12px);
+                }
+
+                & > .title-and-info {
+                    & > h4 {
+                        @include font-cardo(18px);
+                    }
+
+                    & > span {
+                        @include font-inter(16px);
+                    }
+                }
+            }
+        }
+
+        & > .buttons-order-read-detail {
+            & > button, & > div {
+                width: 16rem;
+            }
+            & > .order-btn {
+                @include button-yellow(16px);
+            }
+
+            & > .read-detail-btn {
+                & > p {
+                    @include font-cardo(16px);
+                }
+            }
+        }
     }
 }
