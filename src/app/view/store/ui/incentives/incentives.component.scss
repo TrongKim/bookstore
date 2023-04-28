@@ -1,0 +1,72 @@
+@import 'variables';
+@import 'mixins';
+
+section.incentives {
+    padding: 8.5rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $light_yellow;
+
+    & > .incentives-container {
+        width: 129.7rem;
+
+        & > ul.list-incentives {
+            display: flex;
+            column-gap: 9rem;
+
+            & > li.incentive {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & > .icon {
+                    width: 8rem;
+                    height: 8rem;
+
+                    display: grid;
+                    place-content: center;
+
+                    background-color: $primary_blue_color;
+                }
+
+                & > h4.title-incentive {
+                    @include font-cardo(3.2rem);
+                    font-weight: 700;
+                    letter-spacing: -0.02em;
+                    color: $primary_blue_color;
+
+                    width: fit-content;
+
+                    margin-top: 1.9rem;
+                }
+
+                & > p.description {
+                    @include description(1.9rem, $primary_blue_color);
+                    text-align: center;
+
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.incentives > .incentives-container {
+        flex: 1;
+
+        width: 100%;
+
+        padding: 0 2.5rem;
+
+        & > ul.list-incentives {
+            flex-wrap: wrap;
+            row-gap: 4rem;
+            justify-content: center;
+        }
+
+    }
+}
