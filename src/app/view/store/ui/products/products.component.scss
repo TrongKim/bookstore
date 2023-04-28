@@ -10,6 +10,7 @@ section.list-product {
             column-gap: 4.8rem;
             row-gap: 7rem;
             flex-wrap: wrap;
+            justify-content: center;
 
             & > li.product {
                 width: 40.1rem;
@@ -94,6 +95,14 @@ section.list-product {
 
 
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 433px) {
+    section.list-product > .list-product-container > ul.products {
+        & > li.product > .image-product > img {
+            width: 100%;
         }
     }
 }

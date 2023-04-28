@@ -224,18 +224,24 @@ header {
 }
 
 @media only screen and (max-width: 720px) {
-    header > .container > .top-navbar > .container-right {
-        & > ul.menu {
-            display: none;
+    header > .container {
+        & > .top-navbar > .container-right {
+            & > ul.menu {
+                display: none;
+            }
+    
+            & > ul.menu-responsive {
+                display: flex;
+            }
+    
+            & > i {
+                display: block;
+            }
+    
         }
 
-        & > ul.menu-responsive {
-            display: flex;
+        & > .content-page-container {
+            width: 100%;
         }
-
-        & > i {
-            display: block;
-        }
-
     }
 }
