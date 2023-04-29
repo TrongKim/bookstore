@@ -4,8 +4,9 @@
 section.detail-product {
     padding: 15rem 0;
 
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     & > .detail-product-container {
         width: 129.7rem;
@@ -13,8 +14,6 @@ section.detail-product {
         & > .information-about-book {
             display: flex;
             justify-content: space-between;
-
-            height: 65rem;
 
             & > .container-left {
                 width: 58rem;
@@ -241,6 +240,84 @@ section.incentives {
                     text-align: center;
 
                     margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.detail-product > .detail-product-container {
+        width: 100%;
+
+        padding: 0 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    section.detail-product > .detail-product-container {
+        & > .information-about-book {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    section.detail-product > .detail-product-container > .more-information-about-book-container {
+        & > .more-information {
+            flex-direction: column;
+            row-gap: 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    section.detail-product > .detail-product-container > .more-information-about-book-container {
+        & > .nav-change-information {
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    section.detail-product > .detail-product-container {
+        & > .information-about-book {
+            & > .container-left {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    section.detail-product > .detail-product-container {
+        & > .information-about-book {
+            & > .container-right > .add-cart-container {
+                width: 100%;
+
+                & > .input-number-book-order {
+                    width: 10rem;
+                }
+
+                & > button.add-cart-btn {
+                    flex: 1;
+
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    section.detail-product > .detail-product-container {
+        & > .information-about-book {
+            & > .container-right > .add-cart-container {
+                & > .input-number-book-order {
+                    width: 6rem;
                 }
             }
         }
