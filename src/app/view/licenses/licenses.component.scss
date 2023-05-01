@@ -64,3 +64,19 @@ section.licenses {
         }
     }
 }
+
+@media only screen and (max-width: 1250px) {
+    section.licenses {
+        padding: 0 15rem;
+        padding-top: 13.5rem;
+        padding-bottom: 13rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    section.licenses {
+        padding: 0 4rem;
+        padding-top: 13.5rem;
+        padding-bottom: 13rem;
+    }
+}
