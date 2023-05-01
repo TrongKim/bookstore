@@ -42,6 +42,18 @@ section.change-log {
 
             width: fit-content;
 
+            text-align: center;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    section.change-log {
+        padding: 20rem 2.5rem;
+
+        & > .change-log-container {
+            width: 100%;
         }
     }
 }
