@@ -67,3 +67,15 @@ section.protected {
         }
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    section.protected {
+        padding: 0 2.5rem; 
+
+        & > .protected-container {
+            width: 100%;
+    
+            padding: 12.4rem 2.5rem;
+        }
+    }
+}
