@@ -9,8 +9,6 @@ section.articles {
     place-content: center;
 
     & > .articles-container {
-        width: 130rem;
-
         & > ul.article-list {
             margin-top: 5rem;
 
@@ -96,5 +94,11 @@ section.articles {
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    section.articles > .articles-container > ul.article-list {
+        justify-content: center;
     }
 }

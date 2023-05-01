@@ -1,0 +1,32 @@
+<section class="frequent-questions">
+    <div class="frequent-questions-container container">
+        <div class="title">
+            <h3>Frequent Questions?</h3>
+            <div class="line"></div>
+        </div>
+        <div class="list-questions-container">
+            <div class="container-left">
+                <ul class="list-questions">
+                    <li *ngFor="let question of questions.slice(0, 6); index as index" (click)="clickEventOpenQuestion(index)" class="question" [ngClass]="{'active': indexActiveQuestion !== null && indexActiveQuestion === index}">
+                        <div class="title-question">
+                            <div class="circle"></div>
+                            <h4>{{question.question}}</h4>
+                        </div>
+                        <p class="answer">{{question.answer}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-right">
+                <ul class="list-questions">
+                    <li *ngFor="let question of questions.slice(6, questions.length); index as index" (click)="clickEventOpenQuestion(6 + index)" class="question" [ngClass]="{'active': indexActiveQuestion !== null && indexActiveQuestion - 6 === index}">
+                        <div class="title-question">
+                            <div class="circle"></div>
+                            <h4>{{question.question}}</h4>
+                        </div>
+                        <p class="answer">{{question.answer}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

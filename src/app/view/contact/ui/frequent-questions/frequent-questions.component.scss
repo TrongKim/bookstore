@@ -1,0 +1,153 @@
+@import 'variables';
+@import 'mixins';
+
+section.frequent-questions {
+    padding: 14.6rem 0;
+
+    display: grid;
+    place-content: center;
+
+    background-color: $background-opacity-blue;
+
+    & > .frequent-questions-container {
+        & > .list-questions-container {
+            display: flex;
+            column-gap: 8.2rem;
+
+            margin-top: 3rem;
+
+            & > div {
+                & > ul.list-questions {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.2rem;
+
+                    width: 61.1rem;
+
+                    & > li.question {
+                        padding-bottom: 1.6rem;
+
+                        height: 6.8rem;
+
+                        overflow: hidden;
+
+                        border-bottom: 1px solid $primary_blue_color_opacity_2;
+
+                        transition: all 0.5s linear;
+
+                        cursor: pointer;
+                        
+                        & > .title-question {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 1.6rem;
+
+                            & > .circle {
+                                @include circle(1.4rem);
+                                
+                                background-color: $light_yellow;
+                            }
+
+                            & > h4 {
+                                @include font-cardo(2.4rem);
+                                font-weight: 700;
+                                line-height: 5.2rem;
+                                color: $primary_blue_color;
+                            }
+                        }
+
+                        & > p.answer {
+                            @include description(1.9rem, $gray);
+                        
+                            margin-top: 0.1rem;
+
+                            opacity: 0;
+
+                            transition: opacity 0.2s linear;
+                        }
+
+                        &.active {
+                            height: 23rem;
+
+                            & > p.answer {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 1350px) {
+    section.keep-in-touch > .keep-in-touch-container {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 4rem;
+
+        & > .container-left {
+            & > .title {
+                margin: 0 auto;
+    
+                & > h3 {
+                    margin: 0 auto;
+                }
+    
+                & > .line {
+                    margin: 0 auto;
+                    margin-top: 2.2rem;
+                }
+            }
+
+            & > p.description {
+                text-align: center;
+            }
+        }
+
+        & > .container-right {
+            margin-right: unset;
+        }
+
+    }
+
+    section.frequent-questions > .frequent-questions-container > .list-questions-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    section.frequent-questions > .frequent-questions-container {
+        & > .list-questions-container > div > ul.list-questions {
+            width: 100%;
+
+            & > li.question {
+                & > .title-question > h4 {
+                    line-height: 3.2rem;
+                }
+
+                & > p.answer.active {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    section.frequent-questions > .frequent-questions-container {
+        & > .list-questions-container > div > ul.list-questions {
+            width: 100%;
+
+            & > li.question {
+                &.active {
+                    height: 26rem;
+                }
+            }
+        }
+    }
+}
