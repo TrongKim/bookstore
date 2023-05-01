@@ -66,6 +66,7 @@ section.significant {
 
                     & > .circle {
                         @include circle(1.5rem);
+                        min-width: 1.5rem;
                         
                         background-color: $light_yellow;
                     }
@@ -80,7 +81,7 @@ section.significant {
         }
 
         & > .special-text-container {
-            height: 13.8rem;
+            height: 5.3rem 0;
 
             background-color: $primary_blue_color;
 
@@ -105,6 +106,32 @@ section.significant {
                 font-weight: 500;
                 line-height: 180%;
                 color: $white;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    section.significant {
+        & > .significant-container {
+            & > .special-text-container {
+                padding: 5.3rem 3.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 885px) {
+    section.significant {
+        & > .significant-container {
+            & > .image-significant {
+                height: auto;
+
+                & > img {
+                    object-fit: contain;
+
+                    width: 100%;
+                }
             }
         }
     }

@@ -50,3 +50,25 @@ section.error {
         }
     }
 }
+
+@media only screen and (max-width: 675px) {
+    section.error > .error-container {
+        width: 100%;
+
+        padding: 0 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    section.error > .error-container {
+        & > .error-image {
+            width: 100%;
+
+            & > img {
+                width: 100%;
+
+                object-fit: contain;
+            }
+        }
+    }
+}
