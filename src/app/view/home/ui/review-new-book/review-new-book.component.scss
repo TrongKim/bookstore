@@ -187,6 +187,17 @@ section.review-new-book {
 
                     height: 3.7rem;
 
+                    opacity: 0;
+
+                    transform: translateX(1.5rem);
+
+                    transition: all 0.5s linear;
+
+                    &.active {
+                        opacity: 1;
+                        transform: translateX(0rem);
+                    }
+
                     & > .line {
                         border: 1px solid $light_yellow;
 
@@ -214,6 +225,16 @@ section.review-new-book {
                     flex-direction: column;
                     row-gap: 3.2rem;
 
+                    opacity: 0;
+                    transform: translateX(1.5rem);
+
+                    transition: all 0.5s linear;
+
+                    &.active {
+                        opacity: 1;
+                        transform: translateX(0rem);
+                    }
+
                     & > h2 {
                         color: $white;
                         font-family: 'Cardo';
@@ -238,6 +259,16 @@ section.review-new-book {
                     height: 6.5rem;
 
                     margin-top: 4.9rem;
+
+                    opacity: 0;
+                    transform: translateX(1.5rem);
+
+                    transition: all 0.5s linear;
+
+                    &.active {
+                        opacity: 1;
+                        transform: translateX(0rem);
+                    }
 
                     & > button, & > div {
                         width: 22rem;
@@ -276,6 +307,16 @@ section.review-new-book {
 
                     height: 6.3rem;
 
+                    opacity: 0;
+                    transform: translateX(1.5rem);
+
+                    transition: all 0.5s linear;
+
+                    &.active {
+                        opacity: 1;
+                        transform: translateX(0rem);
+                    }
+
                     & > .parameter-child {
                         display: flex;
                         column-gap: 1.3rem;
@@ -306,6 +347,18 @@ section.review-new-book {
 
             & > .container-right {
                 width: fit-content;
+
+                & > .image-container {
+                    opacity: 0;
+                    transform: translateY(5rem);
+    
+                    transition: all 0.5s linear;
+    
+                    &.active {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
             }
         }
     }
