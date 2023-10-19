@@ -38,6 +38,17 @@ section.what-learn {
 
                         background-color: $background-opacity-blue;
 
+                        opacity: 0;
+
+                        transform: translateY(3rem);
+
+                        transition: all 0.35s linear;
+
+                        &.active {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+
                         & > .icon {
                             @include circle(5rem);
                             
@@ -58,6 +69,45 @@ section.what-learn {
                             margin-top: 3.1rem;
                         }
                     }
+                }
+            }
+
+            & > .container-right {
+                transform: translateY(1.5rem);
+    
+                opacity: 0;
+    
+                transition: all 0.5s linear;
+    
+                &.active {
+                    transform: translateY(0);
+    
+                    opacity: 1;
+                }
+            }
+        }
+
+        & > .title {
+            & > h3 {
+                transform: translateY(1rem);
+                opacity: 0;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            & > .line {
+                transform: scaleX(0);
+                transform-origin: center center;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: scaleX(1);
                 }
             }
         }

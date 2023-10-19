@@ -65,6 +65,29 @@ header {
                         line-height: 125%;
 
                         cursor: pointer;
+
+                        & > .line {
+                            height: 1px;
+                            width: 100%;
+
+                            background-color: $white;
+
+                            transform: translateY(5px);
+
+                            transition: all 0.2s linear;
+
+                            opacity: 0;
+                        }
+
+                        &:hover > .line {
+                            transform: translateY(0);
+                            opacity: 1; 
+                        }
+
+                        &.active > .line {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
 
                     & > li.cart {

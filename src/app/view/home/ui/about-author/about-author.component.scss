@@ -20,12 +20,22 @@ section.about-author {
                 height: 69rem;
             
                 overflow: hidden;
+
+                opacity: 0;
+                transform: translateY(3rem);
+
+                transition: all 0.75s linear;
             
                 & > img {
                     object-position: -25px;
             
                     width: 100%;
                     height: 100%;
+                }
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
         }
@@ -45,12 +55,32 @@ section.about-author {
                     @include font-inter(19px);
                     color: $gray;
                     line-height: 180%;
+
+                    transform: translateY(1.5rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
                 }
 
                 & > .parameter {
                     display: flex;
 
                     height: 9.7rem;
+
+                    transform: translateY(1.5rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
 
                     & > div {
                         & > h3 {
@@ -114,6 +144,16 @@ section.about-author {
                     display: flex;
                     column-gap: 3.7rem;
 
+                    transform: translateY(1.5rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+
                     & > .container-right {
 
                         margin: 14.5px 0;
@@ -127,6 +167,31 @@ section.about-author {
                             @include font-inter(1.9rem);
                             line-height: 180%;
                             color: $primary_blue_color_opacity_low;
+                        }
+                    }
+                }
+
+                & > .title {
+                    & > h3 {
+                        transform: translateY(1rem);
+                        opacity: 0;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+
+                    & > .line {
+                        transform: scaleX(0);
+                        transform-origin: center center;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: scaleX(1);
                         }
                     }
                 }

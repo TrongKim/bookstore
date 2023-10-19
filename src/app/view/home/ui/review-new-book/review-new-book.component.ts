@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { take } from 'rxjs';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-review-new-book',
@@ -12,12 +15,35 @@ export class ReviewNewBookComponent implements OnInit {
   @ViewChild('buttons_order_read_detail_element', { static: false }) buttons_order_read_detail_element_ref: ElementRef | null = null;
   @ViewChild('parameter_element', { static: false }) parameter_element_ref: ElementRef | null = null;
   @ViewChild('image_book_container_element', { static: false }) image_book_container_element_ref: ElementRef | null = null;
+  @ViewChild('menu_top_navbar_element', { static: false }) menu_top_navbar_element_ref: ElementRef | null = null;
+
+  protected subs: SubSink = new SubSink();
+  constructor(protected router: Router) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
+    this.handleUIMenuTopNavBar();
     this.handleEventLoadWebToActiveAnimation();
     this.handleEventLoadWebToActiveAnimationBook();
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
+
+  handleUIMenuTopNavBar(): void {
+    if (!this.menu_top_navbar_element_ref) return;
+    const menu_top_navbar_element = this.menu_top_navbar_element_ref.nativeElement as HTMLUListElement;
+    const url = this.router.url.split('/')[1];
+    let count = 0;
+    while (count < menu_top_navbar_element.children.length) {
+      if (menu_top_navbar_element.children[count].textContent?.toLowerCase().includes(url)) {
+        menu_top_navbar_element.children[count].classList.add('active');
+      }
+      count++;
+    }
+
   }
 
   handleEventLoadWebToActiveAnimation(): void {

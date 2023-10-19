@@ -1,0 +1,1 @@
+export const SPACE_TOP_TO_TRIGGER_ANIMATION = 450;

@@ -38,21 +38,26 @@
                 </div>
             </div>
             <div class="container-right">
-                <ul class="menu">
+                <ul #menu_top_navbar_element class="menu">
                     <li [routerLink]="['/home']" routerLinkActive="router-link-active">
                         Home
+                        <div class="line"></div>
                     </li>
                     <li [routerLink]="['/pages']">
                         Pages
+                        <div class="line"></div>
                     </li>
                     <li [routerLink]="['/about']">
                         About
+                        <div class="line"></div>
                     </li>
                     <li [routerLink]="['/services']">
                         Services
+                        <div class="line"></div>
                     </li>
                     <li [routerLink]="['/contact']">
                         Contact
+                        <div class="line"></div>
                     </li>
                     <li (click)="clickEventShowCartPopup()" class="cart">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"

@@ -1,7 +1,7 @@
 <section class="author-book" [ngClass]="{'white': backgroundColor === 'white', 'blue': backgroundColor === 'blue'}">
     <div class="author-book-content container">
-        <h2 class="title">Author’s Book Includes</h2>
-        <div class="books">
+        <h2 #title_section_author_book_element class="title">Author’s Book Includes</h2>
+        <div #book_container_element class="books">
             <div class="container-left">
                 <div class="about-first-book">
                     <app-icon-book-atomic-one></app-icon-book-atomic-one>

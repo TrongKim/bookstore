@@ -26,6 +26,17 @@ section.author-book {
             width: fit-content;
 
             margin: 0 auto;
+
+            opacity: 0;
+
+            transition: all 0.25s linear;
+
+            transform: translateY(15px);
+
+            &.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         & > .books {
@@ -81,6 +92,7 @@ section.author-book {
                                 & > .parameter-child {
                                     display: flex;
                                     column-gap: 1.3rem;
+                                    
                                     & > .circle {
                                         @include circle(16px);
                                         background-color: $light_yellow;
@@ -114,6 +126,14 @@ section.author-book {
                                 height: 6.5rem;
 
                                 margin-top: 3rem;
+
+                                transition: all 0.25s linear;
+
+                                &:hover {
+                                    background-color: $light_yellow;
+
+                                    color: $primary_blue_color;
+                                }
                             }
                         }
                     }
@@ -201,9 +221,30 @@ section.author-book {
                                 height: 6.5rem;
 
                                 margin-top: 3rem;
+
+                                transition: all 0.25s linear;
+
+                                &:hover {
+                                    background-color: $light_yellow;
+
+                                    color: $primary_blue_color;
+                                }
                             }
                         }
                     }
+                }
+            }
+
+            & > div {
+                opacity: 0;
+
+                transform: translateY(5rem);
+
+                transition: all 0.35s linear;
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
         }

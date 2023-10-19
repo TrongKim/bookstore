@@ -34,11 +34,30 @@ section.order-now {
                         margin: unset;
 
                         color: $white;
+
+                        transform: translateY(1rem);
+                        opacity: 0;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
 
                     & > .line {
                         margin: unset;
                         margin-top: 2.2rem;
+
+                        transform: scaleX(0);
+                        transform-origin: left center;
+
+                        transition: all 0.2s linear;
+
+                        &.active {
+                            transform: scaleX(1);
+                        }
                     }
                 }
 
@@ -48,6 +67,18 @@ section.order-now {
                     @include font-inter(19px);
                     color: $primary_blue_color_opacity_low;
                     line-height: 180%;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
                 }
 
                 & > .order-btn {
@@ -62,7 +93,39 @@ section.order-now {
                     border: 1px solid $light_yellow;
 
                     margin-top: 3.1rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+                    
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
+
+                    &:hover {
+                        background-color: $light_yellow;
+                        color: $primary_blue_color;
+                        border: 1px solid $light_yellow;
+                    }
                 }
+            }
+        }
+
+        & > .container-right {
+            transform: translateY(1.5rem);
+
+            opacity: 0;
+
+            transition: all 0.5s linear;
+
+            &.active {
+                transform: translateY(0);
+
+                opacity: 1;
             }
         }
     }

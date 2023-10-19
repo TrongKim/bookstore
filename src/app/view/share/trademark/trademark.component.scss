@@ -25,6 +25,16 @@ section.trademark {
                     display: grid;
                     place-content: center;
 
+                    transform: translateY(1rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+
                     & > img {
                         height: 88.98px;
                     }
@@ -44,6 +54,16 @@ section.trademark {
     
                     margin: 0 auto;
                     margin-top: 28.54px;
+
+                    transform: translateY(1rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
                 }
 
                 & > p.about-trademark {
@@ -54,6 +74,41 @@ section.trademark {
                     margin-top: 9.47px;
 
                     text-align: center;
+
+                    transform: translateY(1rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        & > .title {
+            & > h3 {
+                transform: translateY(1rem);
+                opacity: 0;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            & > .line {
+                transform: scaleX(0);
+                transform-origin: center center;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: scaleX(1);
                 }
             }
         }

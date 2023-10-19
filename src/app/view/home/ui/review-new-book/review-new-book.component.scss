@@ -67,6 +67,29 @@ section.review-new-book {
                         line-height: 125%;
 
                         cursor: pointer;
+
+                        & > .line {
+                            height: 1px;
+                            width: 100%;
+
+                            background-color: $white;
+
+                            transform: translateY(5px);
+
+                            transition: all 0.2s linear;
+
+                            opacity: 0;
+                        }
+
+                        &:hover > .line {
+                            transform: translateY(0);
+                            opacity: 1; 
+                        }
+
+                        &.active > .line {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
 
                     & > li.cart {
@@ -80,6 +103,16 @@ section.review-new-book {
 
                         width: 18rem;
                         height: 100%;
+
+                        transition: all 0.25s linear;
+
+                        &:hover {
+                            background-color: transparent;
+
+                            border: 1px solid $light_yellow;
+
+                            color: $light_yellow;
+                        }
                     }
                 }
 
@@ -272,10 +305,19 @@ section.review-new-book {
 
                     & > button, & > div {
                         width: 22rem;
+                        cursor: pointer;
                     }
 
                     & > .order-btn {
                         @include button-yellow(19px);
+
+                        transition: all 0.25s linear;
+                        
+                        &:hover {
+                            background-color: transparent;
+                            color: $light_yellow;
+                            border: 1px solid $light_yellow;
+                        }
                     }
 
                     & > .read-detail-btn {
@@ -289,8 +331,26 @@ section.review-new-book {
                             width: fit-content;
 
                             @include font-cardo(19px);
+                        }
 
-                            border-bottom: 1px solid $white;
+                        & > .line {
+                            height: 1px;
+                            width: 100%;
+
+                            background-color: $white;
+
+                            transform-origin: center center;
+
+                            transform: translateY(5px);
+
+                            transition: all 0.2s linear;
+
+                            opacity: 0;
+                        }
+
+                        &:hover > .line {
+                            transform: translateY(0);
+                            opacity: 1;
                         }
                     }
                 }

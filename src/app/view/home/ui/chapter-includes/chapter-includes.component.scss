@@ -26,6 +26,17 @@ section.chapter-includes {
 
                 max-width: 63rem;
 
+                opacity: 0;
+
+                transform: translateY(3rem);
+
+                transition: all 0.35s linear;
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
                 & > h4.title-chapter {
                     @include font-cardo(2.4rem);
 
@@ -89,6 +100,23 @@ section.chapter-includes {
 
             margin: 0 auto;
             margin-top: 7.9rem;
+
+            opacity: 0;
+
+            transform: translateY(1.5rem);
+
+            transition: all 0.25s linear;
+            
+            &.active {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+            &:hover {
+                background-color: $primary_blue_color;
+                color: $white;
+            }
         }
 
         & > .question {
@@ -97,6 +125,18 @@ section.chapter-includes {
             width: fit-content;
 
             margin-top: 3.2rem;
+
+            opacity: 0;
+
+            transform: translateY(1.5rem);
+
+            transition: all 0.25s linear;
+            
+            &.active {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
 
             & > p {
                 max-width: 27rem;
@@ -109,6 +149,31 @@ section.chapter-includes {
                     color: $primary_blue_color;
     
                     text-decoration: underline;
+                }
+            }
+        }
+
+        & > .title {
+            & > h3 {
+                transform: translateY(1rem);
+                opacity: 0;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            & > .line {
+                transform: scaleX(0);
+                transform-origin: center center;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: scaleX(1);
                 }
             }
         }
