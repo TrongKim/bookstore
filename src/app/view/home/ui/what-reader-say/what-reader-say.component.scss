@@ -25,17 +25,36 @@ section.what-reader-say {
                     max-width: 32.6rem;
 
                     margin: unset;
-
                     & > h3 {
+                        text-align: start;
                         margin-bottom: 2.7rem;
 
                         height: unset;
+
+                        transform: translateY(1rem);
+                        opacity: 0;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
 
                     & > .line {
                         width: 49.26px;
 
                         margin: unset;
+
+                        transform: scaleX(0);
+                        transform-origin: center center;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: scaleX(1);
+                        }
                     }
                 }
 
@@ -45,10 +64,34 @@ section.what-reader-say {
                     color: $gray;
 
                     margin-top: 2.9rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
                 }
 
                 & > .ratings {
                     margin-top: 4.6rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
 
                     & > ul {
                         display: flex;
@@ -106,10 +149,34 @@ section.what-reader-say {
                 background-color: $primary_blue_color;
 
                 max-width: 37rem;
+
+                opacity: 0;
+
+                transform: translateY(1.5rem);
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    opacity: 1;
+
+                    transform: translateY(0);
+                }
                 
                 & > .name-and-avatar {
                     display: flex;
                     column-gap: 2rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
 
                     & > .name-and-ratings {
                         display: flex;
@@ -160,6 +227,18 @@ section.what-reader-say {
                     font-weight: 700;
 
                     margin-top: 2.2rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
                 }
 
                 & > p.normal-description {
@@ -168,6 +247,18 @@ section.what-reader-say {
                     @include font-inter(1.9rem);
                     line-height: 180%;
                     color: $primary_blue_color_opacity_low;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        opacity: 1;
+
+                        transform: translateY(0);
+                    }
                 }
             }
 
