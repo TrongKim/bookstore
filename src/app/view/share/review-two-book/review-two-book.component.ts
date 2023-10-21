@@ -36,7 +36,7 @@ export class ReviewTwoBookComponent implements OnInit {
         setTimeout(() => {
           book_container_element.children[countAnimation].classList.add('active');
           countAnimation++;
-        }, (count + 1) * 400);
+        }, (count + 1) * 300);
         count++;
       }
     }
