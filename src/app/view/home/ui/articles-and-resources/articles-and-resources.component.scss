@@ -11,6 +11,32 @@ section.articles-and-resources {
     justify-content: center;
 
     & > .articles-and-resources-container {
+
+        & > .title {
+            & > h3 {
+                transform: translateY(1rem);
+                opacity: 0;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            & > .line {
+                transform: scaleX(0);
+                transform-origin: center center;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: scaleX(1);
+                }
+            }
+        }
+        
         & > ul.list-card {
             margin-top: 5rem;
 
@@ -21,6 +47,19 @@ section.articles-and-resources {
                 height: 60rem;
                 
                 width: 41rem;
+
+                cursor: pointer;
+
+                opacity: 0;
+
+                transform: translateY(3rem);
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
 
                 & > .image-card-container {
                     width: 100%;
