@@ -38,7 +38,7 @@ export class TrademarkComponent implements OnInit {
             }, (countAnimationChild * 250));
             countAnimationChild++;
           }
-        }, 500 + (count * 500));
+        }, 500 + (count * 300));
         count++;
       }
     }
