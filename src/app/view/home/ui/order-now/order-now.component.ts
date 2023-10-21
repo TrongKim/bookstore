@@ -38,7 +38,7 @@ export class OrderNowComponent implements OnInit {
       for(let element of elements) {
         setTimeout(() => { 
           element.classList.add('active');
-        }, 700 + (count * 350));
+        }, 700 + (count * 250));
         count++;
       }
       setTimeout(() => {
