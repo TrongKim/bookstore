@@ -43,7 +43,7 @@ export class WhatLearnComponent implements OnInit {
       setTimeout(() => {
         list_item_can_learn_element.children[countElement].classList.add('active');
         countElement++;
-      }, 900 + (count * 350));
+      }, 900 + (count * 250));
       count++;
     }
   }
@@ -53,6 +53,6 @@ export class WhatLearnComponent implements OnInit {
     const image_container_element = this.image_container_element_ref.nativeElement as HTMLElement;
     setTimeout(() => {
       image_container_element.classList.add('active');
-    }, 2350);
+    }, 2000);
   }
 }
