@@ -209,10 +209,29 @@ header {
                     text-align: center;
 
                     height: unset;
+
+                    transform: translateY(1rem);
+                    opacity: 0;
+
+                    transition: all 0.25s linear;
+
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
                 }
 
                 & > .line {
                     margin-top: 3.4rem;
+
+                    transform: scaleX(0);
+                    transform-origin: center center;
+
+                    transition: all 0.2s linear;
+
+                    &.active {
+                        transform: scaleX(1);
+                    }
                 }
             }
 
@@ -221,6 +240,16 @@ header {
 
                 @include description(1.9rem, $primary_blue_color_opacity_low);
                 text-align: center;
+
+                transform: translateY(1rem);
+                opacity: 0;
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
         }
 

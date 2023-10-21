@@ -7,7 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('menu_top_navbar_element', { static: false }) menu_top_navbar_element_ref: ElementRef | null = null;
+  @ViewChild('menu_top_navbar_element', { static: false })
+    menu_top_navbar_element_ref: ElementRef | null = null;
+  @ViewChild('title_element', { static: false })
+    title_element_ref: ElementRef | null = null;
+  @ViewChild('description_element', { static: false })
+  description_element_ref: ElementRef | null = null;
   @Input() titlePage: string = 'None Title Here';
   @Input() descriptionPage: string = 'Not have any description here'
 
@@ -21,6 +26,8 @@ export class HeaderComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.handleUIMenuTopNavBar();
+    this.handleUITitle();
+    this.handleUIDescription();
   }
 
   handleUIMenuTopNavBar(): void {
@@ -34,6 +41,25 @@ export class HeaderComponent implements OnInit {
       }
       count++;
     }
+  }
+
+  handleUITitle(): void {
+    if (!this.title_element_ref) return;
+    const title_element = this.title_element_ref.nativeElement as HTMLElement;
+    setTimeout(() => {
+      title_element.children[0].classList.add('active');
+    }, 0);
+    setTimeout(() => {
+      title_element.children[1].classList.add('active');
+    }, 500);
+  }
+
+  handleUIDescription(): void {
+    if (!this.description_element_ref) return;
+    const description_element = this.description_element_ref.nativeElement as HTMLElement;
+    setTimeout(() => {
+      description_element.classList.add('active');
+    }, 750);
   }
 
   clickEventActiveMenuResponsive(): void {
