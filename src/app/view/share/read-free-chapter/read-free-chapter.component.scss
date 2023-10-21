@@ -18,6 +18,13 @@ section.read-free-chapter {
         display: grid;
         place-content: center;
 
+        opacity: 0;
+
+        transition: all 0.25s linear;
+        &.active {
+            opacity: 1;
+        }
+
         & > .content-container {
             width: 84rem;
 
