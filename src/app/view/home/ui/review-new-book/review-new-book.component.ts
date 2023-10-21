@@ -58,7 +58,7 @@ export class ReviewNewBookComponent implements OnInit {
     for(let element of elements) {
       setTimeout(() => {
         element.classList.add('active');
-      }, count * 700);
+      }, count * 300);
       count++;
     }
   }
