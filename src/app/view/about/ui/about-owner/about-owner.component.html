@@ -1,10 +1,10 @@
 <section class="about-owner">
     <div class="about-owner-container container">
-        <div class="image-owner">
+        <div #image_owner_element class="image-owner">
             <img src="assets/img/owner.png" alt="">
         </div>
         <div class="information-about-owner">
-            <div class="container-left">
+            <div #container_left_element class="container-left">
                 <ul class="about-country">
                     <li>
                         <p class="title-info">Country :</p>
@@ -28,13 +28,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="container-right">
+            <div #container_right_element class="container-right">
                 <div class="title">
                     <h3>About Dr. John Abraham</h3>
                     <div class="line"></div>
                 </div>
                 <p class="description">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, that can combined with a handful of model sentence structures.</p>
-                <button class="contact-btn">Contact now</button>
+                <button [routerLink]="['/contact']" class="contact-btn">Contact now</button>
             </div>
         </div>
     </div>

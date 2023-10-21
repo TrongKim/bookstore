@@ -16,6 +16,14 @@ section.about-owner {
         & > .image-owner {
             height: 70rem;
 
+            opacity: 0;
+
+            transition: all 1s linear;
+
+            &.active {
+                opacity: 1;
+            }
+
             & > img {
                 width: 100%;
                 height: 100%;
@@ -34,6 +42,18 @@ section.about-owner {
                 padding: 4.5rem 6.6rem;
 
                 background-color: $white;
+
+                opacity: 0;
+
+                transform: translateY(1.5rem);
+
+                transition: all 0.25s linear;
+
+                &.active {
+                    opacity: 1;
+
+                    transform: translateY(0);
+                }
 
                 & > ul.about-country {
                     & > li {
@@ -69,18 +89,50 @@ section.about-owner {
                         margin: unset;
 
                         text-align: start;
+
+                        transform: translateY(1rem);
+                        opacity: 0;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
                     }
 
                     & > .line {
                         margin: unset;
                         margin-top: 2.2rem;
+
+                        transform: scaleX(0);
+                        transform-origin: left center;
+
+                        transition: all 0.25s linear;
+
+                        &.active {
+                            transform: scaleX(1);
+                        }
                     }
                 }
+                
 
                 & > p.description {
                     margin-top: 2.7rem;
 
                     @include description(1.9rem, $gray);
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+    
+                    transition: all 0.25s linear;
+    
+                    &.active {
+                        opacity: 1;
+    
+                        transform: translateY(0);
+                    }
                 }
 
                 & > button.contact-btn {
@@ -90,6 +142,24 @@ section.about-owner {
                     height: 6.5rem;
 
                     margin-top: 3.4rem;
+
+                    opacity: 0;
+
+                    transform: translateY(1.5rem);
+    
+                    transition: all 0.25s linear;
+    
+                    &.active {
+                        opacity: 1;
+    
+                        transform: translateY(0);
+                    }
+
+                    &:hover {
+                        background-color: $primary_blue_color;
+
+                        color: $white;
+                    }
                 }
             }
         }
