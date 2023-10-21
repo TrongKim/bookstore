@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    window.scrollTo(0, 0);
   }
 
 }
