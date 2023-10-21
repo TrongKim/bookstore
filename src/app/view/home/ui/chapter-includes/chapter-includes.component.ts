@@ -49,7 +49,7 @@ export class ChapterIncludesComponent implements OnInit {
       setTimeout(() => {
         chapter_list_element.children[countElement].classList.add('active');
         countElement++;
-      }, 900 + (count * 350));
+      }, 900 + (count * 250));
       count++;
     }
   }
