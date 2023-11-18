@@ -16,6 +16,8 @@ section.list-product {
                 width: 40.1rem;
                 height: 77.4rem;
 
+                cursor: pointer;
+
                 & > .image-product {
                     width: 100%;
 
@@ -91,6 +93,12 @@ section.list-product {
                     height: 6.5rem;
 
                     margin-top: 2.5rem;
+
+                    transition: all 0.25s linear;
+
+                    &:hover {
+                        background-color: $light_yellow;
+                    }
                 }
 
 

@@ -1,0 +1,22 @@
+<section class="top-product">
+    <div class="top-product-container">
+        <div class="top-product-title">
+            Top products
+        </div>
+        <ul class="list-product-top">
+            <li *ngFor="let product of products" class="product-top">
+                <div class="container-left">
+                    <div class="title-product">
+                        {{product.product_name}}
+                    </div>
+                    <div class="framework-product">
+                        {{product.framework}}
+                    </div>
+                </div>
+                <div class="container-right">
+                    {{product.sales}} <p>sales</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+.dashboard {
+    background-color: #F9FAFB;
+    width: 100%;
+    min-height: 100vh;
+
+    & > .dashboard-content-container {
+        padding-left: 24rem;
+        padding-top: calc(6.98rem + 1.6rem);
+        padding-right: 1.6rem;
+        padding-bottom: 1.6rem;
+        
+        & > .product-and-customer-container {
+            display: flex;
+            column-gap: 1.6rem;
+
+            & > .container-left {
+                width: fit-content;
+            }
+            & > .container-right {
+                flex: 1;
+            }
+        }
+
+        & > .transaction-container {
+            margin-top: 1.6rem;
+        }
+    }
+}

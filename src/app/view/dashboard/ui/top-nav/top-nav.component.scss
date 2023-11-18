@@ -1,0 +1,123 @@
+@import 'mixins';
+@import 'variables';
+
+.top-nav-dashboard {
+    padding: 1.2rem 2rem;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background-color: $white;
+    
+    border-bottom: 1px solid #E5E7EB;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &>.container-left {
+        display: flex;
+        align-items: center;
+        column-gap: 3.2rem;
+
+        flex: 1;
+
+        &>.logo {
+            width: 35px;
+            height: 33.056px;
+        }
+
+        &>.search-bar {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+
+            width: 40.2rem;
+            height: 4.5rem;
+
+            padding: 1.3rem 1.5rem;
+
+            border-radius: 1.6rem;
+            border: 1px solid #E5E7EB;
+            background-color: #F9FAFB;
+
+            & > .icon-search {
+                width: 2rem;
+                height: 2rem;
+                
+                display: grid;
+                place-content: center;
+
+                cursor: pointer;
+            }
+
+            & > .search-zone {
+                flex: 1;
+                & > input {
+                    border: unset;
+                    outline: unset;
+
+                    @include font-inter(1.6rem);
+                    line-height: 150%;
+
+                    width: 100%;
+
+                    &::placeholder {
+                        color: #6B7280;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .container-right {
+        display: flex;
+        column-gap: 1.2rem;
+        justify-content: flex-end;
+        align-items: center;
+
+        flex: 1;
+
+        & > ul.icon-list {
+            display: flex;
+            column-gap: 1rem;
+            align-items: center;
+            justify-content: flex-end;
+
+            & > .icon {
+                width: 2.8rem;
+                height: 2.8rem;
+
+                display: grid;
+                place-content: center;
+
+                cursor: pointer;
+            }
+        }
+
+        & > .avatar-container {
+            width: 3.2rem;
+            height: 3.2rem;
+
+            display: grid;
+            place-content: center;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            cursor: pointer;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+            }
+        }
+    }
+}

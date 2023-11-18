@@ -1,0 +1,24 @@
+<section class="transactions">
+    <div class="transactions-container">
+        <div class="transactions-title-container">
+            <div class="transactions-title">Transactions</div>
+            <p class="description-title">This is a list of latest transactions.</p>
+        </div>
+        <div class="table-transactions">
+            <ul class="column-name-table-transactions">
+                <li class="column-transactions">TRANSACTION</li>
+                <li class="column-transactions">DATE & TIME</li>
+                <li class="column-transactions">AMOUNT</li>
+                <li class="column-transactions">STATUS</li>
+            </ul>
+            <ul class="list-transaction">
+                <li *ngFor="let transaction of transactions" class="transaction">
+                    <div class="column transaction-column-value">Payment from <p>{{transaction.name}}</p></div>
+                    <div class="column transaction-date-time-value">{{transaction.date_time}}</div>
+                    <div class="column transaction-amount-value">{{(transaction.amount < 0 ? '-$' + (transaction.amount * -1) : '$' + transaction.amount)}}</div>
+                    <div class="column transaction-status-value" [ngClass]="{'complete': transaction.status === 'Completed', 'cancel': transaction.status === 'Cancelled', 'in-progress': transaction.status === 'In progress'}">{{transaction.status}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

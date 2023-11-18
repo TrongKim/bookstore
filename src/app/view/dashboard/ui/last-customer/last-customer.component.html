@@ -1,0 +1,27 @@
+<section class="last-customer">
+    <div class="last-customer-container">
+        <div class="last-customer-title">
+            Latest Customers
+        </div>
+        <ul class="last-user-list">
+            <li *ngFor="let user of users" class="last-user">
+                <div class="container-left">
+                    <div class="avatar-container">
+                        <img src={{user.avatar}} alt="avatar user">
+                    </div>
+                    <div class="information-container">
+                        <div class="name">
+                            {{user.name}}
+                        </div>
+                        <div class="email">
+                            {{user.email}}
+                        </div>
+                    </div>
+                </div>
+                <div class="container-right">
+                    ${{user.total_buy}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
