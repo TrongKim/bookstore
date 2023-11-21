@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './view/dashboard/dashboard/dashboard.component';
-import { TopNavComponent } from './view/dashboard/ui/top-nav/top-nav.component';
-import { SidebarComponent } from './view/dashboard/ui/sidebar/sidebar.component';
-import { TransactionsComponent } from './view/dashboard/ui/transactions/transactions.component';
-import { TopProductComponent } from './view/dashboard/ui/top-product/top-product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -71,7 +67,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
