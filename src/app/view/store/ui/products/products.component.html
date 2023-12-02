@@ -3,20 +3,20 @@
         <section class="list-product">
             <div class="list-product-container container">
                 <ul class="products">
-                    <li *ngFor="let item of [].constructor(6)" class="product">
+                    <li *ngFor="let item of books.slice(0, 6)" class="product">
                         <div class="image-product">
-                            <img src="assets/img/Book.png" alt="book">
+                            <img src={{item.images}} alt="book">
                         </div>
                         <div class="name-and-price">
-                            <h4 class="name">Atomic One’s</h4>
-                            <p class="price">$23.89</p>
+                            <h4 class="name">{{item.name}}</h4>
+                            <p class="price">${{item.price}}</p>
                         </div>
-                        <p class="description">Many variations of passages of Lorem Ipsum willing araise  alteration in some form.</p>
+                        <p class="description">{{item.description.slice(0, 100)}}...</p>
                         <div class="tag-book">
                             <div class="circle"></div>
-                            <h4>Printed Book</h4>
+                            <h4>{{item.genres}}</h4>
                         </div>
-                        <button class="order-btn">Order Today</button>
+                        <button [routerLink]="['../detail-product']" [queryParams]="{ query: item.id }" class="order-btn">Order Today</button>
                     </li>
                 </ul>
             </div>

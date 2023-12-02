@@ -13,6 +13,7 @@ export class AboutAuthorComponent implements OnInit {
     title_author_element_ref: ElementRef | null = null;
   @ViewChild('container_about_author_element', { static: false })
   container_about_author_element_ref: ElementRef | null = null;
+  
   ngOnInit(): void {
   }
 
