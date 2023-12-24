@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { StoreAPIService } from "src/app/api/client/store.api";
-import { IBook, IBookCreate } from "src/app/model/book.model";
+import { IBook, IBookCreate, IBookUpdate } from "src/app/model/book.model";
 
 @Injectable()
 export class ProductService {
@@ -17,5 +17,9 @@ export class ProductService {
 
     createBook(data: IBookCreate): Observable<boolean> {
         return this.sps.createBook(data).pipe(map(result => result.status === 200));
+    }
+
+    updateBook(data: IBookUpdate): Observable<boolean> {
+        return this.sps.updateBook(data).pipe(map(result => result.status === 200));
     }
 }

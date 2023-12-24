@@ -40,6 +40,11 @@ export class ProductListComponent implements OnInit {
 
   isShowDialogAddBook: boolean = false;
 
+  protected isEditMode: {
+    id: string;
+    state: boolean;
+  } | null = null;
+
   protected subs = new SubSink();
 
   ngOnInit(): void {
@@ -74,10 +79,59 @@ export class ProductListComponent implements OnInit {
     this.files = input_element.files;
   }
 
+  clickEventEditBook(book: IBook): void {
+    this.isShowDialogAddBook = true;
+    this.isEditMode = {
+      state: true,
+      id: book.id
+    };
+    this.product_form.setValue({
+      name: book.name,
+      genres: book.genres,
+      price: book.price,
+      description: book.description,
+      pages: book.pages,
+      length: book.length,
+      publisher: book.publisher,
+      language: book.language,
+      isbn_10: book.isbn_10,
+      dimensions: book.dimensions,
+      who_like: book.who_like,
+      message: book.message,
+      about_author: book.about_author,
+      amount: book.amount,
+    });
+  }
+
   async clickEventCreateBook() {
     if (!this.product_form.valid) return;
     const url = await this.handleFile();
     if (!url) return;
+    if (this.isEditMode?.state) {
+      this.subs.add(this.ps.updateBook({
+        id: this.isEditMode.id || '',
+        name: this.product_form.value.name || '',
+        genres: this.product_form.value.genres || '',
+        price: this.product_form.value.price || 0,
+        description: this.product_form.value.description || '',
+        pages: this.product_form.value.pages || 0,
+        length: this.product_form.value.length || 0,
+        publisher: this.product_form.value.publisher || '',
+        language: this.product_form.value.language || '',
+        isbn_10: this.product_form.value.isbn_10 || '',
+        dimensions: this.product_form.value.dimensions || '',
+        who_like: this.product_form.value.who_like || '',
+        message: this.product_form.value.message || '',
+        about_author: this.product_form.value.about_author || '',
+        amount: this.product_form.value.amount || 0,
+        images: url
+      }).subscribe(state => {
+        if(state) {
+          this.isShowDialogAddBook = false;
+          this.product_form.patchValue({});
+        }
+      }));
+    }
     this.subs.add(this.ps.createBook({
       name: this.product_form.value.name || '',
       genres: this.product_form.value.genres || '',
@@ -95,7 +149,10 @@ export class ProductListComponent implements OnInit {
       amount: this.product_form.value.amount || 0,
       images: url
     }).subscribe(state => {
-      if(state) this.isShowDialogAddBook = false;
+      if(state) {
+        this.isShowDialogAddBook = false;
+        this.product_form.patchValue({});
+      }
     }));
   }
 

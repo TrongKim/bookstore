@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { IBook, IBookCreate } from "src/app/model/book.model";
+import { IBook, IBookCreate, IBookUpdate } from "src/app/model/book.model";
 import { IHttpResponse } from "src/app/model/dynamic.model";
 
 @Injectable({
@@ -38,6 +38,10 @@ export class StoreAPIService {
 
     createBook(data: IBookCreate): Observable<IHttpResponse<IBook[]>> {
         return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/book/create', data, { headers: this.reqHeader });
+    }
+
+    updateBook(data: IBookUpdate): Observable<IHttpResponse<IBook[]>> {
+        return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/book/update', data, { headers: this.reqHeader });
     }
     
 }

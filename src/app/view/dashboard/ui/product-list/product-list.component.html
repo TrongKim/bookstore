@@ -20,7 +20,7 @@
                             <h4 class="name">{{item.name}}</h4>
                             <p class="price">${{item.price}}</p>
                         </div>
-                        <button class="order-btn">Edit</button>
+                        <button (click)="clickEventEditBook(item)" class="order-btn">Edit</button>
                     </li>
                 </ul>
             </div>
