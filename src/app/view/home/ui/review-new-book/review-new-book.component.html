@@ -59,7 +59,7 @@
                         Contact
                         <div class="line"></div>
                     </li>
-                    <li class="cart">
+                    <li (click)="clickEventShowCartPopup()" class="cart">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -67,8 +67,8 @@
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </li>
-                    <li class="button-order">
-                        Order Today
+                    <li *ngIf="!isLoginSuccess" (click)="clickEventShowLoginPopup()" class="button-order">
+                        Login
                     </li>
                 </ul>
                 <i (click)="clickEventActiveMenuResponsive()" class="fa-solid fa-bars"></i>
@@ -149,3 +149,5 @@
         </div>
     </div>
 </section>
+<app-login (e_close_popup)="clickEventCloseLoginPopup()" *ngIf="isShowLoginPopup"></app-login>
+<app-cart-popup (e_close_popup)="clickEventCloseCartPopup()" *ngIf="isShowCartPopup"></app-cart-popup>

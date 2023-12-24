@@ -1,5 +1,8 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieUtils } from 'src/app/utils/cookie.utils';
+import { SubSink } from 'subsink';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -17,17 +20,29 @@ export class HeaderComponent implements OnInit {
   @Input() descriptionPage: string = 'Not have any description here'
 
   isShowCartPopup: boolean = false;
+  isShowLoginPopup: boolean = false;
   isActiveMenuResponsive: boolean = false;
+  isLoginSuccess: boolean = false;
 
-  constructor(protected router: Router) { }
+  protected subs: SubSink = new SubSink();
+
+  constructor(protected router: Router, protected as: AuthService) { }
 
   ngOnInit(): void {
+    this.isLoginSuccess = CookieUtils.getCookie('auth') === 'login success';
+    this.subs.add(this.as.auth_state$.subscribe(auth => this.isLoginSuccess = auth));
   }
 
   ngAfterViewInit(): void {
     this.handleUIMenuTopNavBar();
     this.handleUITitle();
     this.handleUIDescription();
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subs.unsubscribe();
   }
 
   handleUIMenuTopNavBar(): void {
@@ -70,8 +85,15 @@ export class HeaderComponent implements OnInit {
     this.isActiveMenuResponsive = false;
   }
 
+  clickEventCloseLoginPopup(): void {
+    this.isShowLoginPopup = false;
+  }
+
   clickEventShowCartPopup(): void {
     this.isShowCartPopup = true;
+  }
+  clickEventShowLoginPopup(): void {
+    this.isShowLoginPopup = true;
   }
 
   clickEventCloseCartPopup(): void {

@@ -1,0 +1,186 @@
+@import 'mixins';
+@import 'variables';
+
+.backdrop {
+    @include backdrop;
+    z-index: 1001;
+}
+
+.auth-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>.auth-container {
+
+        width: 80.1rem;
+
+        height: 95vh;
+
+        background-color: $white;
+
+        &.register {
+            width: 70%;
+        }
+
+        &>.container-top {
+            padding: 3.5rem 7.6rem;
+
+            background-color: $light_yellow;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & > h3 {
+                @include font-cardo(5rem);
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                color: $primary_blue_color;
+    
+                width: fit-content;
+    
+                margin: unset;
+            }
+
+            & > svg {
+                cursor: pointer;
+            }
+        }
+
+        & > .container-bottom {
+            padding: 4rem 7.6rem;
+
+            & > form {
+                & h4 {
+                    @include font-cardo(2.4rem);
+                    line-height: 5.2rem;
+                    color: $primary_blue_color;
+                }
+
+                & .field-container {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1.4rem;
+
+                    border: 1px solid $border-blue-opacity;
+                
+                    padding: 1.5rem 2.1rem;
+
+                    & > input {
+                        @include font-inter(1.9rem);
+                        color: $primary_blue_color;
+                        line-height: 180%;
+    
+                        outline: unset;
+                        border: unset;
+    
+                        height: 3.4rem;
+
+                        width: 100%;
+                        
+                        &::placeholder {
+                            @include font-inter(1.9rem);
+                            color: $gray;
+                            line-height: 180%;
+                        }
+                    }
+
+                    & > .input-phone-number {
+                        @include font-inter(1.9rem);
+                        color: $primary_blue_color;
+                        line-height: 180%;
+                        
+                        resize: none;
+                        outline: unset;
+                        border: none;
+                        width: 100%;
+                        height: 3.6rem;
+
+                        position: relative;
+
+                        &.placeholder:before {
+                            content: attr(data-before);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            @include font-inter(1.9rem);
+                            color: $gray;
+                            line-height: 180%;
+                        }
+                    }
+                }
+
+                &.form-register {
+                    display: none;
+                    column-gap: 2rem;
+                    & > .container-left, & > .container-right {
+                        flex: 1;
+                    }
+                }
+            }
+
+            & > button.login-button {
+                @include button(2.2rem, $primary_blue_color, $white);
+
+                width: 30rem;
+                height: 6rem;
+
+                margin: 5rem auto;
+
+                display: block;
+
+                transition: all 0.25s linear;
+
+                &:hover {
+                    background-color: $light_yellow;
+
+                    color: $primary_blue_color;
+                }
+            }
+
+            & > p.register-text {
+                @include font-inter(1.6rem);
+                color: $primary_blue_color;
+
+                margin: 0 auto;
+
+                display: block;
+
+                width: fit-content;
+
+                & > span {
+                    font-weight: 600;
+
+                    cursor: pointer;
+
+                    transition: all 0.2s linear;
+
+                    &:hover {
+                        color: $light_yellow;
+                    }
+                }
+            }
+
+            &.register {
+                & > .form-login {
+                    display: none;
+                }
+
+                & > .form-register {
+                    display: flex;
+                }
+            }
+
+        }
+
+    }
+}

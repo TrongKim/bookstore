@@ -3,6 +3,7 @@ import { ReadFreeChapterModule } from "src/app/view/share/read-free-chapter/read
 import { ProductsComponent } from "./products.component";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from "@angular/router";
     imports: [
         ReadFreeChapterModule,
         CommonModule,
+        ReactiveFormsModule,
         RouterModule.forChild([
             {
                 path: '',

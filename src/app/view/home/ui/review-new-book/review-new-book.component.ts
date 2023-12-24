@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
+import { CookieUtils } from 'src/app/utils/cookie.utils';
+import { AuthService } from 'src/app/view/share/login/auth.service';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -10,17 +12,24 @@ import { SubSink } from 'subsink';
 })
 export class ReviewNewBookComponent implements OnInit {
   @ViewChild('welcome_to_page_element', { static: false }) welcome_to_page_element_ref: ElementRef | null = null;
-  isActiveMenuResponsive: boolean = false;
   @ViewChild('title_and_description_website_element', { static: false }) title_and_description_website_element_ref: ElementRef | null = null;
   @ViewChild('buttons_order_read_detail_element', { static: false }) buttons_order_read_detail_element_ref: ElementRef | null = null;
   @ViewChild('parameter_element', { static: false }) parameter_element_ref: ElementRef | null = null;
   @ViewChild('image_book_container_element', { static: false }) image_book_container_element_ref: ElementRef | null = null;
   @ViewChild('menu_top_navbar_element', { static: false }) menu_top_navbar_element_ref: ElementRef | null = null;
+  
+  isActiveMenuResponsive: boolean = false;
+  isShowLoginPopup: boolean = false;
+  isShowCartPopup: boolean = false;
+  isLoginSuccess: boolean = false;
 
   protected subs: SubSink = new SubSink();
-  constructor(protected router: Router) {}
+  constructor(protected router: Router, protected as: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoginSuccess = CookieUtils.getCookie('auth') === 'login success';
+    this.subs.add(this.as.auth_state$.subscribe(auth => this.isLoginSuccess = auth));
+  }
 
   ngAfterViewInit(): void {
     this.handleUIMenuTopNavBar();
@@ -71,6 +80,21 @@ export class ReviewNewBookComponent implements OnInit {
     }, 200);
   }
 
+  clickEventCloseLoginPopup(): void {
+    this.isShowLoginPopup = false;
+  }
+
+  clickEventShowCartPopup(): void {
+    this.isShowCartPopup = true;
+  }
+  clickEventShowLoginPopup(): void {
+    this.isShowLoginPopup = true;
+  }
+
+  clickEventCloseCartPopup(): void {
+    this.isShowCartPopup = false;
+  }
+
   clickEventActiveMenuResponsive(): void {
     this.isActiveMenuResponsive = true;
   }
@@ -78,5 +102,5 @@ export class ReviewNewBookComponent implements OnInit {
   clickEventCloseMenuResponsive(): void {
     this.isActiveMenuResponsive = false;
   }
-
+  
 }

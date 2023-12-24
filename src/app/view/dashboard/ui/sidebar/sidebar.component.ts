@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashBoardService } from '../../dashboard/dashboard.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   
-  constructor() { }
+  constructor(protected dbs: DashBoardService) { }
 
   ngOnInit(): void {
+  }
+
+  clickEventChangePageProduct(): void {
+    this.dbs.changePageProduct('product');
   }
 
 }

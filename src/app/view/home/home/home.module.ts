@@ -15,6 +15,8 @@ import { WhatLearnComponent } from "../ui/what-learn/what-learn.component";
 import { ChapterIncludesComponent } from "../ui/chapter-includes/chapter-includes.component";
 import { WhatReaderSayComponent } from "../ui/what-reader-say/what-reader-say.component";
 import { ArticlesAndResourcesComponent } from "../ui/articles-and-resources/articles-and-resources.component";
+import { CartPopupModule } from "../../share/popup/cart-popup/cart-popup.module";
+import { LoginModule } from "../../share/login/login.module";
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ArticlesAndResourcesComponent } from "../ui/articles-and-resources/arti
         TrademarkModule,
         ReviewTwoBookModule,
         ReadFreeChapterModule,
+        CartPopupModule,
+        LoginModule,
         RouterModule.forChild([
             {
               path: '',

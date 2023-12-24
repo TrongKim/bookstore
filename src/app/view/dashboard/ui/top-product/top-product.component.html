@@ -7,14 +7,14 @@
             <li *ngFor="let product of products" class="product-top">
                 <div class="container-left">
                     <div class="title-product">
-                        {{product.product_name}}
+                        {{product.name}}
                     </div>
                     <div class="framework-product">
-                        {{product.framework}}
+                        {{product.isbn_10}}
                     </div>
                 </div>
                 <div class="container-right">
-                    {{product.sales}} <p>sales</p>
+                    {{product.amount}} <p>total</p>
                 </div>
             </li>
         </ul>

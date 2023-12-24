@@ -1,42 +1,47 @@
-import { Directive, ElementRef } from "@angular/core";
+import { Directive, ElementRef, Input } from "@angular/core";
 
 @Directive({
     selector: '[d-input-phone]',
     standalone: true
 })
 export class InputPhoneDirective {
+    @Input() placeholder: string = '';
+
     constructor(
         private element: ElementRef<any>,
     ) { }
 
     ngOnInit(): void {
         const input_element = this.element.nativeElement as HTMLInputElement;
-        input_element.addEventListener('keydown', event => this.keyDownEventInputPhoneNumber(event))
+        input_element.addEventListener('keydown', event => this.keyDownEventInputPhoneNumber(event));
     }
 
     //==========================DOM EVENT FUNCTION==========================
-    
+
     pasteEventPastePhoneNumber(event: ClipboardEvent): void {
-        if(isNaN(Number(event.clipboardData?.getData('text')))) {
+        if (isNaN(Number(event.clipboardData?.getData('text')))) {
             event.preventDefault();
         }
     }
 
     keyDownEventInputPhoneNumber(event: KeyboardEvent): void {
         if (this.isMoveKey(event)) return;
-        if(event.key === 'Tab') return;
-        if(event.key === 'Enter') return;
-        if(event.ctrlKey) return;
+        const input_element = event.target as HTMLInputElement;
+        if (event.key === 'Space' || event.key === ' ') {
+            event.preventDefault();
+            return;
+        }
+        if (event.key === 'Tab') return;
+        if (event.key === 'Enter') return;
+        if (event.ctrlKey) return;
         if (!this.isValidKeydownPhone(event)) {
             event.preventDefault();
             return;
         }
-        const input_element = event.target as HTMLInputElement;
-
-        if (input_element.value.length < 11) return;
-        if (event.key !== 'Backspace' && !event.shiftKey) {
-            event.preventDefault();
-            return;
+        if (input_element?.value?.length >= 11) {
+            if (event.key !== 'Backspace' && !event.shiftKey) {
+                event.preventDefault();
+            }
         }
     }
 
@@ -59,4 +64,5 @@ export class InputPhoneDirective {
         const element = event.target as HTMLInputElement;
         return (element.selectionEnd || 0) - (element.selectionStart || 0) != 0;
     }
+
 }

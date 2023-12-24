@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { CookieUtils } from 'src/app/utils/cookie.utils';
+import { DashBoardService } from './dashboard.service';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +11,31 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(protected afs: AngularFireStorage) {}
+  constructor(protected afs: AngularFireStorage, protected dbs: DashBoardService) {}
+
+  isShowDashboard: boolean = false;
+  isShowDialogLogin: boolean = false;
+
+  isPageProducts: boolean = false;
+
+  protected subs = new SubSink();
 
   ngOnInit(): void {
+    let admin_id = CookieUtils.getCookie('admin_id');
+    if (!admin_id) {
+      this.isShowDialogLogin = true;
+      return;
+    }
+    this.isShowDashboard = true;
+
+    this.subs.add(this.dbs.isChangePageProduct$.subscribe(state => {
+      if (state === 'product') this.isPageProducts = true;
+      else this.isPageProducts = false;
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
   async changeEventUploadImage(event: Event) {
@@ -21,8 +46,12 @@ export class DashboardComponent implements OnInit {
     if (!file) return;
     const test = await this.afs.upload("files/"+file.name, file);
     const url = await test.ref.getDownloadURL();
-    alert(url);
     console.log(url);
+  }
+
+  clickEventCloseLoginPopup(): void {
+    this.isShowDialogLogin = false;
+    this.isShowDashboard = true;
   }
 
 }

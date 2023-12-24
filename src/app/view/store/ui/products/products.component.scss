@@ -1,6 +1,34 @@
 @import 'variables';
 @import 'mixins';
 
+.store > .products-page > .search-product-container {
+    margin: 5rem auto;
+    
+    width: 50rem;
+    height: 5rem;
+
+    border: 1px solid $border-blue-opacity;
+    border-radius: 10rem;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 1rem;
+
+    & > input {
+        margin-left: 1rem;
+
+        @include font-inter(1.9rem);
+        color: $primary_blue_color;
+        line-height: 180%;
+
+        border: none;
+        outline: none;
+
+        flex: 1;
+    }
+}
+
 section.list-product {
     padding-top: 15rem;
 

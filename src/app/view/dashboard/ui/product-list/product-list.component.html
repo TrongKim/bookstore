@@ -1,0 +1,251 @@
+<div class="store">
+    <div class="products-page">
+        <div class="search-product-container">
+            <svg width="27" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 4.50003C6.93913 4.50003 5.92172 4.92146 5.17157 5.67161C4.42143 6.42175 4 7.43917 4 8.50003C4 9.5609 4.42143 10.5783 5.17157 11.3285C5.92172 12.0786 6.93913 12.5 8 12.5C9.06087 12.5 10.0783 12.0786 10.8284 11.3285C11.5786 10.5783 12 9.5609 12 8.50003C12 7.43917 11.5786 6.42175 10.8284 5.67161C10.0783 4.92146 9.06087 4.50003 8 4.50003ZM2 8.50003C1.99988 7.55574 2.22264 6.62475 2.65017 5.78278C3.0777 4.9408 3.69792 4.21163 4.4604 3.65456C5.22287 3.09749 6.10606 2.72825 7.03815 2.57687C7.97023 2.42549 8.92488 2.49625 9.82446 2.78338C10.724 3.07052 11.5432 3.56594 12.2152 4.22933C12.8872 4.89272 13.3931 5.70537 13.6919 6.60117C13.9906 7.49697 14.0737 8.45063 13.9343 9.38459C13.795 10.3185 13.4372 11.2064 12.89 11.976L17.707 16.793C17.8892 16.9816 17.99 17.2342 17.9877 17.4964C17.9854 17.7586 17.8802 18.0094 17.6948 18.1949C17.5094 18.3803 17.2586 18.4854 16.9964 18.4877C16.7342 18.49 16.4816 18.3892 16.293 18.207L11.477 13.391C10.5794 14.0293 9.52335 14.4082 8.42468 14.4862C7.326 14.5641 6.22707 14.3381 5.2483 13.833C4.26953 13.3279 3.44869 12.5631 2.87572 11.6224C2.30276 10.6817 1.99979 9.60147 2 8.50003Z"
+                    fill="#6B7280" />
+            </svg>
+            <input [formControl]="search_control" (keydown.enter)="enterEventSearchProduct()" type="text"
+                name="search-product" placeholder="Search book">
+        </div>
+        <section class="list-product">
+            <div class="list-product-container">
+                <ul class="products">
+                    <li *ngFor="let item of books" class="product">
+                        <div class="image-product">
+                            <img src={{item.images}} alt="book">
+                        </div>
+                        <div class="name-and-price">
+                            <h4 class="name">{{item.name}}</h4>
+                            <p class="price">${{item.price}}</p>
+                        </div>
+                        <button class="order-btn">Edit</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<div (click)="clickEventShowAddProduct()" class="add-book-icon"></div>
+<section *ngIf="isShowDialogAddBook" class="add-book-popup">
+    <div class="add-book-container">
+        <div class="container-top">
+            <h3 class="auth-title">Add Book</h3>
+            <svg (click)="clickEventClosePopup()" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 1L1 21M21 21L1 1L21 21Z" stroke="#1B3764" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="container-bottom">
+            <form [formGroup]="product_form" method="POST" class="form-register">
+                <div class="container-one">
+                    <h4>Name:</h4>
+                    <div class="field-container field-container-phone">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input type="text" formControlName="name" placeholder="Name" #phone_number_element
+                            class="input-phone-number placeholder" />
+                    </div>
+                    <h4>Genres:</h4>
+                    <div class="field-container field-container-username">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="genres" name="username" placeholder="Genres" type="text"
+                            class="input-username">
+                    </div>
+                    <h4>Price:</h4>
+                    <div class="field-container field-container-username">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="price" name="username" placeholder="Price" type="text"
+                            class="input-username">
+                    </div>
+                    <h4>Description:</h4>
+                    <div class="field-container field-container-username">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="description" name="username" placeholder="Description" type="text"
+                            class="input-username">
+                    </div>
+                </div>
+                <div class="container-two">
+                    <h4>Pages:</h4>
+                    <div class="field-container field-container-username">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="pages" name="username" placeholder="Pages" type="number"
+                            class="input-username">
+                    </div>
+                    <h4>Length:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="length" name="password-register" placeholder="Length"
+                            type="number" class="input-password">
+                    </div>
+                    <h4>Image:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input (change)="changeEventUploadImage($event)" name="re-password-register" 
+                            type="file" class="input-password" accept="image/*">
+                    </div>
+                    <h4>Publisher:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="publisher" name="re-password-register" placeholder="Publisher"
+                            type="text" class="input-password">
+                    </div>
+                </div>
+                <div class="container-three">
+                    <h4>Language:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="language" name="re-password-register" placeholder="Language"
+                            type="text" class="input-password">
+                    </div>
+                    <h4>ISBN_10:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="isbn_10" name="re-password-register" placeholder="ISBN_10"
+                            type="text" class="input-password">
+                    </div>
+                    <h4>Dimensions:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="dimensions" name="re-password-register" placeholder="Dimensions"
+                            type="text" class="input-password">
+                    </div>
+                    <h4>Who Like:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="who_like" name="re-password-register" placeholder="Who Like"
+                            type="text" class="input-password">
+                    </div>
+                </div>
+                <div class="container-four">
+                    <h4>Message:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="message" name="re-password-register" placeholder="Message"
+                            type="text" class="input-password">
+                    </div>
+                    <h4>About Author:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="about_author" name="re-password-register" placeholder="About Author"
+                            type="text" class="input-password">
+                    </div>
+                    <h4>Amount:</h4>
+                    <div class="field-container field-container-password">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.542 4.33301H3.83366C3.32533 4.33301 2.83782 4.53494 2.47837 4.89439C2.11893 5.25383 1.91699 5.74134 1.91699 6.24967V19.6663C1.91699 20.1747 2.11893 20.6622 2.47837 21.0216C2.83782 21.3811 3.32533 21.583 3.83366 21.583H17.2503C17.7587 21.583 18.2462 21.3811 18.6056 21.0216C18.9651 20.6622 19.167 20.1747 19.167 19.6663V12.958"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.7295 2.89621C18.1107 2.51496 18.6278 2.30078 19.167 2.30078C19.7062 2.30078 20.2232 2.51496 20.6045 2.89621C20.9857 3.27746 21.1999 3.79455 21.1999 4.33371C21.1999 4.87288 20.9857 5.38996 20.6045 5.77121L11.5003 14.8754L7.66699 15.8337L8.62533 12.0004L17.7295 2.89621Z"
+                                stroke="#FFCA42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input formControlName="amount" name="re-password-register" placeholder="Amount"
+                            type="number" class="input-password">
+                    </div>
+                </div>
+            </form>
+            <button (click)="clickEventCreateBook()" class="login-button">Add Book</button>
+        </div>
+    </div>
+</section>
+<div *ngIf="isShowDialogAddBook" class="backdrop"></div>

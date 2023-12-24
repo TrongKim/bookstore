@@ -67,8 +67,8 @@
                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </li>
-                    <li class="button-order">
-                        Order Today
+                    <li *ngIf="!isLoginSuccess" (click)="clickEventShowLoginPopup()" class="button-order">
+                        Login
                     </li>
                 </ul>
                 <i (click)="clickEventActiveMenuResponsive()" class="fa-solid fa-bars"></i>
@@ -109,3 +109,4 @@
     </div>
 </header>
 <app-cart-popup (e_close_popup)="clickEventCloseCartPopup()" *ngIf="isShowCartPopup"></app-cart-popup>
+<app-login (e_close_popup)="clickEventCloseLoginPopup()" *ngIf="isShowLoginPopup"></app-login>

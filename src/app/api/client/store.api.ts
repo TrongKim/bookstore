@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { IBook } from "src/app/model/book.model";
+import { IBook, IBookCreate } from "src/app/model/book.model";
 import { IHttpResponse } from "src/app/model/dynamic.model";
 
 @Injectable({
@@ -17,17 +17,27 @@ export class StoreAPIService {
     });
 
     getAll(): Observable<IHttpResponse<IBook[]>> {
-        return this.http.get<IHttpResponse<IBook[]>>('http://localhost:3000/product/get-all');
+        return this.http.get<IHttpResponse<IBook[]>>('http://localhost:3000/book/get-all');
     }
 
     getDetailBook(bookId: string): Observable<IHttpResponse<IBook>> {
-        return this.http.get<IHttpResponse<IBook>>(`http://localhost:3000/product/get-one?query=${bookId}`);
+        return this.http.get<IHttpResponse<IBook>>(`http://localhost:3000/book/get-one?query=${bookId}`);
     }
 
     getBooksByIds(bookIds: string[]): Observable<IHttpResponse<IBook[]>> {
-        return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/product/get-by-ids', {
+        return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/book/get-by-ids', {
             ids_product: bookIds
         }, { headers: this.reqHeader });
+    }
+
+    searchBook(search: string): Observable<IHttpResponse<IBook[]>> {
+        return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/book/get-books-by-name', {
+            search_query: search
+        }, { headers: this.reqHeader });
+    }
+
+    createBook(data: IBookCreate): Observable<IHttpResponse<IBook[]>> {
+        return this.http.post<IHttpResponse<IBook[]>>('http://localhost:3000/book/create', data, { headers: this.reqHeader });
     }
     
 }

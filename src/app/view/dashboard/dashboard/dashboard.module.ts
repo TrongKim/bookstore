@@ -9,6 +9,8 @@ import { TopProductModule } from "../ui/top-product/top-product.module";
 import { TransactionsModule } from "../ui/transactions/transactions.module";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { LoginModule } from "../ui/login/login.module";
+import { ProductListModule } from "../ui/product-list/product-list.module";
 
 @NgModule({
     imports: [
@@ -18,6 +20,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
         LastCustomerModule,
         TopProductModule,
         TransactionsModule,
+        LoginModule,
+        ProductListModule,
         RouterModule.forChild([
             {
                 path: '',
