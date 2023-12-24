@@ -21,17 +21,17 @@ export class DashboardComponent implements OnInit {
   protected subs = new SubSink();
 
   ngOnInit(): void {
+    this.subs.add(this.dbs.isChangePageProduct$.subscribe(state => {
+      if (state === 'product') this.isPageProducts = true;
+      else this.isPageProducts = false;
+    }));
+
     let admin_id = CookieUtils.getCookie('admin_id');
     if (!admin_id) {
       this.isShowDialogLogin = true;
       return;
     }
     this.isShowDashboard = true;
-
-    this.subs.add(this.dbs.isChangePageProduct$.subscribe(state => {
-      if (state === 'product') this.isPageProducts = true;
-      else this.isPageProducts = false;
-    }));
   }
 
   ngOnDestroy(): void {

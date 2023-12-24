@@ -17,14 +17,14 @@ export class LoginComponent implements OnInit {
 
   login_form = new FormGroup({
     email: new FormControl('', Validators.compose([Validators.email, Validators.required])),
-    password: new FormControl('', Validators.compose([Validators.minLength(8)]))
+    password: new FormControl('', Validators.compose([Validators.required]))
   });
 
   register_form = new FormGroup({
     email: new FormControl('', Validators.compose([Validators.email, Validators.required])),
     username: new FormControl('', Validators.compose([Validators.required])),
-    password: new FormControl('', Validators.compose([Validators.minLength(8)])),
-    confirm_password: new FormControl('', Validators.compose([Validators.minLength(8)]))
+    password: new FormControl('', Validators.compose([Validators.required])),
+    confirm_password: new FormControl('', Validators.compose([Validators.required]))
   });
 
   isLoginForm: boolean = true;
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         return;
       }
       this.as.authValidate(true);
-      CookieUtils.setCookie('auth', 'login success', new Date(1999, 0, 0).toUTCString());
+      CookieUtils.setCookie('auth', 'login success', new Date(2099, 0, 0).toUTCString());
       this.e_close_popup.emit(true);
     });
   }

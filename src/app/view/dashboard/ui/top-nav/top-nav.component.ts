@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashBoardService } from '../../dashboard/dashboard.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected dbs: DashBoardService) { }
 
   ngOnInit(): void {
+  }
+
+  clickEventChangeHomePage(): void {
+    this.dbs.changePageProduct('home');
   }
 
 }
