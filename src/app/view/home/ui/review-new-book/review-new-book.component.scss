@@ -96,6 +96,27 @@ section.review-new-book {
                         padding: unset;
 
                         padding-right: 3rem;
+
+                        position: relative;
+
+                        & > .notification {
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 50%;
+
+                            background-color: $light_yellow;
+
+                            @include font-inter(1.2rem);
+                            color: $primary_blue_color;
+                            
+                            display: grid;
+                            place-content: center;
+
+                            position: absolute;
+                            top: -5%;
+                            left: -13%;
+
+                        }
                     }
 
                     & > li.button-order {

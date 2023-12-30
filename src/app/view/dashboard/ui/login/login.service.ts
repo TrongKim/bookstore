@@ -10,7 +10,7 @@ export class LoginAdminService {
         return this.aaps.login(email, password).pipe(take(1)).pipe(map(data => {
             return {
                 status: data.status === 200,
-                data: data.data.id || null
+                data: data?.data?.id || null
             }
         }));
     }

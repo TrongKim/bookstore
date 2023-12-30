@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertDynamicComponent } from './view/share/alert-dynamic/alert-dynamic.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    AlertDynamicComponent,
   ],
   imports: [
     BrowserModule,

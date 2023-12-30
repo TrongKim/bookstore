@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IBook, IBookInCartCookie } from 'src/app/model/book.model';
 import { SubSink } from 'subsink';
 import { CookieUtils } from 'src/app/utils/cookie.utils';
+import { AlertDynamicService } from 'src/app/view/share/alert-dynamic/alert-dynamic.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -16,7 +17,8 @@ export class DetailProductComponent implements OnInit {
     amount_product_element_ref: ElementRef | null = null;
   constructor(
     protected dps: DetailProductService,
-    protected ar: ActivatedRoute
+    protected ar: ActivatedRoute,
+    protected ads: AlertDynamicService
   ) { }
 
   detail_book: IBook | null = null;
@@ -63,6 +65,10 @@ export class DetailProductComponent implements OnInit {
       total: amount
     });
     CookieUtils.setCookieProductToCart(JSON.stringify(products), new Date(2099, 0 ,0).toUTCString());
+    this.ads.addCart({
+      id: this.detail_book?.id || '',
+      total: amount
+    });
   }
 
 }

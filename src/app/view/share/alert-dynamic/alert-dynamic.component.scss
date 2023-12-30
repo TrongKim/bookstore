@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'mixins';
+
+.alert-dynamic-container {
+    min-width: 30rem;
+    width: fit-content;
+    height: fit-content;
+
+    background-color: $white;
+
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 10000000;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    & > h3.title {
+        @include font-inter(2.2rem);
+        font-weight: 500;
+        color: $primary_blue_color;
+
+        padding: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    & > .line {
+        width: 90%;
+        height: 0.2rem;
+
+        margin: 0 auto;
+
+        background-color: $primary_blue_color;
+    }
+
+    & > .message {
+        padding: 2.5rem;
+
+        @include font-inter(1.6rem);
+        color: $primary_blue_color;
+    }
+
+    &.success {
+        & > h3.title {
+            color: rgb(116, 189, 8);
+        }
+
+        & > .message {
+            color: rgb(96, 153, 11);
+        }
+    }
+
+    &.error {
+        & > h3.title {
+            color: rgb(189, 8, 8);
+        }
+
+        & > .message {
+            color: rgb(153, 11, 11);
+        }
+    }
+}

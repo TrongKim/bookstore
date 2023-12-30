@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { CookieUtils } from 'src/app/utils/cookie.utils';
 import { SubSink } from 'subsink';
 import { AuthService } from '../login/auth.service';
+import { IBookInCartCookie } from 'src/app/model/book.model';
+import { AlertDynamicService } from '../alert-dynamic/alert-dynamic.service';
 
 @Component({
   selector: 'app-header',
@@ -24,13 +26,20 @@ export class HeaderComponent implements OnInit {
   isActiveMenuResponsive: boolean = false;
   isLoginSuccess: boolean = false;
 
+  numberProductInCart: number = 0;
+
   protected subs: SubSink = new SubSink();
 
-  constructor(protected router: Router, protected as: AuthService) { }
+  constructor(protected router: Router, protected as: AuthService, protected ads: AlertDynamicService) { }
 
   ngOnInit(): void {
     this.isLoginSuccess = CookieUtils.getCookie('auth') === 'login success';
     this.subs.add(this.as.auth_state$.subscribe(auth => this.isLoginSuccess = auth));
+    this.numberProductInCart = this.getIdsBook().length;
+
+    this.subs.add(this.ads.cart_add$.subscribe(data => {
+      this.numberProductInCart +=1;
+    }));
   }
 
   ngAfterViewInit(): void {
@@ -56,6 +65,19 @@ export class HeaderComponent implements OnInit {
       }
       count++;
     }
+  }
+
+  getIdsBook(): string[] {
+    let ids = [];
+    for(let book of this.getBookInCart()) {
+      ids.push(book.id);
+    }
+    return ids;
+  }
+
+  getBookInCart(): IBookInCartCookie[] {
+    const bookInCookie = CookieUtils.getCookieProductInCart();
+    return bookInCookie.trim().length > 0 ? JSON.parse(bookInCookie) as IBookInCartCookie[] : [];
   }
 
   handleUITitle(): void {

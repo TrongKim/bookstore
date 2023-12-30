@@ -1,0 +1,5 @@
+<div *ngIf="isShowAlert" class="alert-dynamic-container" [ngClass]="{'error': 'error' === state, 'success': 'success' === state}">
+    <h3 class="title">{{title}}</h3>
+    <div class="line"></div>
+    <p class="message">{{message}}</p>
+</div>

@@ -31,7 +31,7 @@
 <section *ngIf="isShowDialogAddBook" class="add-book-popup">
     <div class="add-book-container">
         <div class="container-top">
-            <h3 class="auth-title">Add Book</h3>
+            <h3 class="auth-title">{{isAddBook ? "Add Book" : "Edit Book"}}</h3>
             <svg (click)="clickEventClosePopup()" width="22" height="22" viewBox="0 0 22 22" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 1L1 21M21 21L1 1L21 21Z" stroke="#1B3764" stroke-width="2" stroke-linecap="round"
@@ -244,7 +244,7 @@
                     </div>
                 </div>
             </form>
-            <button (click)="clickEventCreateBook()" class="login-button">Add Book</button>
+            <button (click)="clickEventCreateBook()" class="login-button">{{isAddBook ? "Add Book": "Edit Book"}}</button>
         </div>
     </div>
 </section>

@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
+import { IBookInCartCookie } from 'src/app/model/book.model';
 import { CookieUtils } from 'src/app/utils/cookie.utils';
+import { AlertDynamicService } from 'src/app/view/share/alert-dynamic/alert-dynamic.service';
 import { AuthService } from 'src/app/view/share/login/auth.service';
 import { SubSink } from 'subsink';
 
@@ -23,12 +25,18 @@ export class ReviewNewBookComponent implements OnInit {
   isShowCartPopup: boolean = false;
   isLoginSuccess: boolean = false;
 
+  numberProductInCart: number = 0;
+
   protected subs: SubSink = new SubSink();
-  constructor(protected router: Router, protected as: AuthService) {}
+  constructor(protected router: Router, protected as: AuthService, protected ads: AlertDynamicService) {}
 
   ngOnInit(): void {
     this.isLoginSuccess = CookieUtils.getCookie('auth') === 'login success';
     this.subs.add(this.as.auth_state$.subscribe(auth => this.isLoginSuccess = auth));
+    this.numberProductInCart = this.getIdsBook().length;
+    this.subs.add(this.ads.cart_add$.subscribe(data => {
+      this.numberProductInCart +=1;
+    }));
   }
 
   ngAfterViewInit(): void {
@@ -39,6 +47,20 @@ export class ReviewNewBookComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+  }
+
+  
+  getIdsBook(): string[] {
+    let ids = [];
+    for(let book of this.getBookInCart()) {
+      ids.push(book.id);
+    }
+    return ids;
+  }
+
+  getBookInCart(): IBookInCartCookie[] {
+    const bookInCookie = CookieUtils.getCookieProductInCart();
+    return bookInCookie.trim().length > 0 ? JSON.parse(bookInCookie) as IBookInCartCookie[] : [];
   }
 
   handleUIMenuTopNavBar(): void {
