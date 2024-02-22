@@ -4,6 +4,7 @@ import { CartPopupModule } from '../popup/cart-popup/cart-popup.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from '../login/login.module';
+import { TopNavClientModule } from '../topnav/topnav.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { LoginModule } from '../login/login.module';
         CartPopupModule,
         CommonModule,
         RouterModule,
-        LoginModule
+        LoginModule,
+        TopNavClientModule
     ]
 })
 export class HeaderModule { }

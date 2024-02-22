@@ -17,6 +17,7 @@ import { WhatReaderSayComponent } from "../ui/what-reader-say/what-reader-say.co
 import { ArticlesAndResourcesComponent } from "../ui/articles-and-resources/articles-and-resources.component";
 import { CartPopupModule } from "../../share/popup/cart-popup/cart-popup.module";
 import { LoginModule } from "../../share/login/login.module";
+import { TopNavClientModule } from "../../share/topnav/topnav.module";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LoginModule } from "../../share/login/login.module";
         ReadFreeChapterModule,
         CartPopupModule,
         LoginModule,
+        TopNavClientModule,
         RouterModule.forChild([
             {
               path: '',

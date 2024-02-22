@@ -25,10 +25,6 @@ export class DetailProductComponent implements OnInit {
 
   protected subs = new SubSink();
 
-  test(): void {
-    alert(1);
-  }
-
   ngOnInit(): void {
     this.getDetailBook();
   }
@@ -56,6 +52,7 @@ export class DetailProductComponent implements OnInit {
       }]), new Date(2099, 0 ,0).toUTCString());
       return;
     }
+    
     const products: IBookInCartCookie[] = JSON.parse(CookieUtils.getCookieProductInCart()) as IBookInCartCookie[];
     for(let product of products) {
       if (product.id === (this.detail_book?.id || '')) return;

@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
     this.subs.add(this.as.auth_state$.subscribe(auth => this.isLoginSuccess = auth));
     this.numberProductInCart = this.getIdsBook().length;
 
-    this.subs.add(this.ads.cart_add$.subscribe(data => {
+    this.subs.add(this.ads.cart_add$.subscribe(() => {
       this.numberProductInCart +=1;
     }));
   }
