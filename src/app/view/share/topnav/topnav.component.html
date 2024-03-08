@@ -98,3 +98,5 @@
         </ul>
     </div>
 </div>
+<app-login (e_close_popup)="clickEventCloseLoginPopup()" *ngIf="isShowLoginPopup"></app-login>
+<app-cart-popup (e_close_popup)="clickEventCloseCartPopup()" *ngIf="isShowCartPopup"></app-cart-popup>

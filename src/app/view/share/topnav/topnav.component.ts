@@ -62,4 +62,13 @@ export class TopnavComponent implements OnInit {
   clickEventCloseMenuResponsive(): void {
     this.isActiveMenuResponsive = false;
   }
+
+  clickEventCloseCartPopup(): void {
+    this.isShowCartPopup = false;
+  }
+
+  clickEventCloseLoginPopup(): void {
+    this.isShowLoginPopup = false;
+  }
+
 }

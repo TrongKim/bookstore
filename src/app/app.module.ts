@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertDynamicComponent } from './view/share/alert-dynamic/alert-dynamic.component';
+import { Dashboard2Component } from './view/dashboard2/dashboard2/dashboard2.component';
+import { Dashboard2TopnavComponent } from './view/dashboard2/ui/dashboard2-topnav/dashboard2-topnav.component';
 
 const routes: Routes = [
   {
@@ -66,6 +68,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AlertDynamicComponent,
+    Dashboard2Component,
+    Dashboard2TopnavComponent,
   ],
   imports: [
     BrowserModule,
